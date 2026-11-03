@@ -48,7 +48,7 @@ export function ContactSection() {
 
               <div className="mt-6 pt-4 border-t border-white/[0.06]">
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=edc%40thapar.edu"
+                  href="https://mail.google.com/mail/?view=cm&to=edc%40thapar.edu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#f5ed00] hover:text-white transition-colors focus-visible:outline-none focus-visible:underline"
