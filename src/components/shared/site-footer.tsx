@@ -34,7 +34,7 @@ export function SiteFooter() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed max-w-sm mb-6 text-[#a5a49f]">
-                The premier student-led venture and entrepreneurship collective at Thapar Institute
+                The premier student-led venture and entrepreneurship organisation at Thapar Institute
                 of Engineering & Technology. Cultivating founders, builders, and ecosystem leaders.
               </p>
             </div>
@@ -73,28 +73,25 @@ export function SiteFooter() {
             <ul className="flex flex-col gap-3 text-sm">
               <li>
                 <Link
-                  href="/events/tvc-x-sat"
+                  href="/events/e-summit"
                   className="hover:text-[#f4f3ef] transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:underline"
                 >
-                  <span>TVC x SAT</span>
-                  <span className="text-[10px] font-mono text-[#f5ed00] border border-[#f5ed00]/30 px-1 rounded-xs">
-                    TBC
-                  </span>
+                  <span>Flagship E-Summit</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/events/e-summit"
+                  href="/events/tvc-x-sat"
                   className="hover:text-[#f4f3ef] transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:underline"
                 >
-                  <span>E-Summit</span>
-                  <span className="text-[10px] font-mono text-[#f5ed00] border border-[#f5ed00]/30 px-1 rounded-xs">
-                    TBC
-                  </span>
+                  <span>TVC x SAT</span>
                 </Link>
               </li>
               <li>
-                <span className="text-white/40 cursor-not-allowed">Venture Cohort [TBC]</span>
+                <span className="text-[#a5a49f]">Entre Hub Workshops</span>
+              </li>
+              <li>
+                <span className="text-[#a5a49f]">Venture Lab</span>
               </li>
             </ul>
           </div>
@@ -122,7 +119,7 @@ export function SiteFooter() {
 
             <div className="pt-2 border-t border-white/[0.08]">
               <p className="font-mono text-[11px] uppercase tracking-wider text-[#a5a49f] mb-1">
-                Official Inquiries [TBC]
+                Official Inquiries
               </p>
               <a
                 href={`mailto:${siteConfig.contactEmail}`}

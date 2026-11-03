@@ -197,7 +197,12 @@ export function SiteHeader() {
 
           <div className="pt-6 border-t border-white/[0.08] flex flex-col gap-3 text-xs font-mono text-[#a5a49f]">
             <p>Thapar Institute of Engineering & Technology</p>
-            <p className="text-[#f4f3ef]">{siteConfig.contactEmail}</p>
+            <a
+              href={`mailto:${siteConfig.contactEmail}`}
+              className="text-[#f4f3ef] hover:text-[#f5ed00] transition-colors"
+            >
+              {siteConfig.contactEmail}
+            </a>
           </div>
         </div>
       )}

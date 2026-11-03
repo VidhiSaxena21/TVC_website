@@ -18,7 +18,7 @@ export const siteConfig = {
     "The official entrepreneurship and venture collective of Thapar Institute of Engineering & Technology, Patiala.",
   institution: "Thapar Institute of Engineering & Technology",
   location: "Bhadson Road, Patiala, Punjab 147004, India",
-  contactEmail: "contact@thaparventureclub.com", // Official contact placeholder awaiting TVC mailbox confirmation
+  contactEmail: "edc@thapar.edu",
   navigation: [
     { label: "Home", href: "/" },
     { label: "Events", href: "/events" },
@@ -28,44 +28,39 @@ export const siteConfig = {
   socials: [
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/company/thapar-venture-club",
+      href: "https://www.linkedin.com/school/thaparventureclub/posts/",
       handle: "/company/thapar-venture-club",
     },
     {
       label: "Instagram",
-      href: "https://instagram.com/thaparventureclub",
+      href: "https://www.instagram.com/tvc.tiet/",
       handle: "@thaparventureclub",
     },
     {
-      label: "X (Twitter)",
-      href: "https://x.com/thaparventure",
+      label: "Facebook",
+      href: "https://www.facebook.com/edctiet/",
       handle: "@thaparventure",
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/thapar-venture-club",
-      handle: "thapar-venture-club",
     },
   ] as const satisfies readonly SocialLink[],
   initiatives: [
     {
       id: "tvc-x-sat",
-      title: "TVC x SAT",
-      edition: "2026 Cohort",
+      title: "TVC x SAT & High-Stakes Competitions",
+      edition: "Annual Competition",
       dateStatus: "Dates TBC",
-      badge: "High-Velocity Sprints",
+      badge: "High-Stakes Competitions",
       descriptor:
-        "An intensive venture-building sprint bringing student engineers, designers, and domain specialists together to build investor-ready prototypes.",
+        "Organising landmark annual competitions and national-level collaborations with institutions such as IIT Roorkee and Masters' Union, featuring case competitions, business planning challenges and B-Hackathons.",
       href: "/events/tvc-x-sat",
     },
     {
       id: "e-summit",
-      title: "E-Summit",
+      title: "Flagship E-Summit",
       edition: "Flagship Edition",
       dateStatus: "Annual Flagship // TBC",
       badge: "Institutional Flagship",
       descriptor:
-        "The landmark entrepreneurship summit of TIET, hosting keynote leaders, early-stage pitch stages, and venture clinics across campus.",
+        "TIET's flagship entrepreneurship festival, featuring inspiring speaker sessions, interactive Q&A sessions, internship fairs, workshops and networking opportunities.",
       href: "/events/e-summit",
     },
   ] as const,

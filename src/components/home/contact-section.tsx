@@ -35,13 +35,13 @@ export function ContactSection() {
               <div>
                 <div className="flex items-center gap-2.5 font-mono text-xs text-[#a5a49f] mb-3">
                   <Mail className="w-4 h-4 text-[#f5ed00]" />
-                  <span>PRIMARY CONTACT [PLACEHOLDER]</span>
+                  <span>PRIMARY CONTACT</span>
                 </div>
                 <h3 className="font-mono text-lg sm:text-xl font-medium text-[#f4f3ef] mb-2 break-all">
                   {siteConfig.contactEmail}
                 </h3>
                 <p className="text-xs text-[#a5a49f]">
-                  Official communications, event collaborations, and sponsorship inquiries.
+                  Official communications, event collaborations, and institutional inquiries.
                 </p>
               </div>
 

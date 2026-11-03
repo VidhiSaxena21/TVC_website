@@ -35,6 +35,33 @@ html {
   scroll-behavior: auto;
   background: var(--tvc-black);
   color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: #383835 #0b0b0a;
+}
+
+/* Custom TVC Scrollbar for Chromium & WebKit browsers */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333330;
+  border-radius: 4px;
+  border: 2px solid #0b0b0a;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f5ed00;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0b0b0a;
 }
 
 body {

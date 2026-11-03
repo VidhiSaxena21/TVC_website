@@ -5,30 +5,23 @@ export function TeamPreview() {
   const leadershipRoster = [
     {
       slot: "01",
-      role: "President & Executive Director",
-      name: "[ Executive Lead TBC ]",
-      vertical: "Venture Strategy & Institutional Alliances",
+      role: "General Secretary",
+      name: "[ General Secretary TBC ]",
+      affiliation: "Executive Council // TIET Patiala",
       term: "2026–2027",
     },
     {
       slot: "02",
-      role: "Vice President & Operations",
-      name: "[ Operations Lead TBC ]",
-      vertical: "Program Architecture & Campus Logistics",
+      role: "General Secretary",
+      name: "[ General Secretary TBC ]",
+      affiliation: "Executive Council // TIET Patiala",
       term: "2026–2027",
     },
     {
       slot: "03",
-      role: "Head of Engineering & Product",
-      name: "[ Engineering Lead TBC ]",
-      vertical: "Digital Platforms & Hackathon Systems",
-      term: "2026–2027",
-    },
-    {
-      slot: "04",
-      role: "Head of Corporate & Investor Relations",
-      name: "[ Relations Lead TBC ]",
-      vertical: "Venture Mentorship & External Syndicates",
+      role: "General Secretary",
+      name: "[ General Secretary TBC ]",
+      affiliation: "Executive Council // TIET Patiala",
       term: "2026–2027",
     },
   ];
@@ -45,18 +38,18 @@ export function TeamPreview() {
           <div>
             <div className="inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.25em] text-[#a5a49f] mb-4 bg-white/[0.04] border border-white/[0.08] px-3.5 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#f5ed00]" />
-              <span>02 // The Collective</span>
+              <span>02 // Executive Leadership</span>
             </div>
             <h2
               id="team-preview-title"
               className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#f4f3ef]"
             >
-              The minds driving the ecosystem.
+              The leadership steering the collective.
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3">
             <p className="text-sm font-mono text-[#a5a49f]">
-              [ Official TVC Roster // Term 2026–2027 ]
+              [ Highest Leadership Grouping // Term 2026–2027 ]
             </p>
             <Link
               href="/team"
@@ -68,8 +61,8 @@ export function TeamPreview() {
           </div>
         </div>
 
-        {/* Editorial Portrait Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+        {/* 3-Column General Secretaries Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {leadershipRoster.map((member) => (
             <div
               key={member.slot}
@@ -86,30 +79,30 @@ export function TeamPreview() {
                   <User className="w-10 h-10 sm:w-12 sm:h-12" />
                 </div>
 
-                <div className="mt-4">
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#a5a49f] bg-black/40 border border-white/[0.06] px-2.5 py-1 rounded-xs">
+                <div className="mt-5">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#a5a49f] bg-black/50 border border-white/[0.08] px-3 py-1.5 rounded-xs">
                     Slot {member.slot} {"//"} {member.term}
                   </span>
                 </div>
               </div>
 
               {/* Member Meta */}
-              <div className="p-5 flex flex-col justify-between flex-grow">
+              <div className="p-6 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#f5ed00]">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#f5ed00] font-semibold">
                       {member.role}
                     </span>
                   </div>
-                  <h3 className="font-mono text-base font-medium text-[#f4f3ef] mb-2">
+                  <h3 className="font-mono text-lg font-medium text-[#f4f3ef] mb-1.5">
                     {member.name}
                   </h3>
-                  <p className="text-xs text-[#a5a49f] leading-relaxed">{member.vertical}</p>
+                  <p className="text-xs text-[#a5a49f] leading-relaxed">{member.affiliation}</p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-white/40">
+                <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-white/40">
                   <span>TIET PATIALA</span>
-                  <span>PENDING ROSTER</span>
+                  <span>OFFICIAL ROSTER TBC</span>
                 </div>
               </div>
             </div>

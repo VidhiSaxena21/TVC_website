@@ -2,7 +2,6 @@ import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { HeroReveal } from "@/components/home/hero-reveal";
 import { AboutSection } from "@/components/home/about-section";
-import { InitiativesPreview } from "@/components/home/initiatives-preview";
 import { TeamPreview } from "@/components/home/team-preview";
 import { ContactSection } from "@/components/home/contact-section";
 
@@ -13,7 +12,6 @@ export function HomePage() {
       <main id="main-content" className="flex-grow">
         <HeroReveal />
         <AboutSection />
-        <InitiativesPreview />
         <TeamPreview />
         <ContactSection />
       </main>
