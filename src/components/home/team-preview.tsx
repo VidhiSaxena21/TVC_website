@@ -1,30 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight, User } from "lucide-react";
+import { executiveBoardGroups } from "@/data/team";
 
 export function TeamPreview() {
-  const leadershipRoster = [
-    {
-      slot: "01",
-      role: "General Secretary",
-      name: "[ General Secretary TBC ]",
-      affiliation: "Executive Council // TIET Patiala",
-      term: "2026–2027",
-    },
-    {
-      slot: "02",
-      role: "General Secretary",
-      name: "[ General Secretary TBC ]",
-      affiliation: "Executive Council // TIET Patiala",
-      term: "2026–2027",
-    },
-    {
-      slot: "03",
-      role: "General Secretary",
-      name: "[ General Secretary TBC ]",
-      affiliation: "Executive Council // TIET Patiala",
-      term: "2026–2027",
-    },
-  ];
+  const generalSecretaries =
+    executiveBoardGroups.find((g) => g.id === "general-secretaries")?.members ?? [];
 
   return (
     <section
@@ -55,7 +35,7 @@ export function TeamPreview() {
               href="/team"
               className="group inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f5ed00] hover:text-white transition-colors focus-visible:outline-none focus-visible:underline"
             >
-              <span>View Full Leadership & Verticals</span>
+              <span>View Full Executive Board &amp; Verticals</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -63,9 +43,9 @@ export function TeamPreview() {
 
         {/* 3-Column General Secretaries Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {leadershipRoster.map((member) => (
+          {generalSecretaries.map((member, idx) => (
             <div
-              key={member.slot}
+              key={member.id}
               className="group relative bg-[#141413] border border-white/[0.08] hover:border-[#f5ed00]/40 rounded-sm overflow-hidden flex flex-col transition-all duration-300"
             >
               {/* Corner crosshairs */}
@@ -81,7 +61,7 @@ export function TeamPreview() {
 
                 <div className="mt-5">
                   <span className="font-mono text-[11px] uppercase tracking-widest text-[#a5a49f] bg-black/50 border border-white/[0.08] px-3 py-1.5 rounded-xs">
-                    Slot {member.slot} {"//"} {member.term}
+                    Slot 0{idx + 1} {"//"} Term 2026–2027
                   </span>
                 </div>
               </div>
@@ -91,18 +71,20 @@ export function TeamPreview() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-[11px] uppercase tracking-wider text-[#f5ed00] font-semibold">
-                      {member.role}
+                      {member.position}
                     </span>
                   </div>
-                  <h3 className="font-mono text-lg font-medium text-[#f4f3ef] mb-1.5">
+                  <h3 className="font-medium text-lg text-[#f4f3ef] mb-1.5 tracking-tight group-hover:text-white transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-xs text-[#a5a49f] leading-relaxed">{member.affiliation}</p>
+                  <p className="text-xs text-[#a5a49f] leading-relaxed">
+                    Executive Council // TIET Patiala
+                  </p>
                 </div>
 
                 <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-white/40">
                   <span>TIET PATIALA</span>
-                  <span>OFFICIAL ROSTER TBC</span>
+                  <span>PORTRAIT TBC</span>
                 </div>
               </div>
             </div>
@@ -124,7 +106,7 @@ export function TeamPreview() {
             href="/team"
             className="flex-shrink-0 inline-flex items-center gap-2 bg-[#f5ed00] hover:bg-[#fff957] text-black font-semibold text-xs font-mono uppercase tracking-widest px-6 py-3.5 rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            <span>Meet The Full Team</span>
+            <span>Meet All 17 Board Members</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
