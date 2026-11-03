@@ -19,9 +19,7 @@ export const executiveBoardGroups: TeamGroup[] = [
   {
     id: "general-secretaries",
     title: "General Secretaries",
-    eyebrow: "Apex Leadership",
-    description:
-      "The highest student leadership of Thapar Venture Club, driving strategic vision, institutional partnerships, and campus-wide venture ecosystem execution.",
+    eyebrow: "GenSec",
     isLeadership: true,
     members: [
       {
@@ -48,10 +46,23 @@ export const executiveBoardGroups: TeamGroup[] = [
     ],
   },
   {
+    id: "finance",
+    title: "Finance",
+    eyebrow: "FinSec",
+    members: [
+      {
+        id: "parth-gakhar",
+        name: "Parth Gakhar",
+        position: "Finance Secretary",
+        image: "",
+        linkedin: "",
+      },
+    ],
+  },
+  {
     id: "joint-secretaries",
     title: "Joint Secretaries",
-    eyebrow: "Operations & Governance",
-    description: "Managing inter-departmental workflows, executive oversight, and campus coordination.",
+    eyebrow: "JointSec",
     members: [
       {
         id: "aadish-jain",
@@ -77,25 +88,9 @@ export const executiveBoardGroups: TeamGroup[] = [
     ],
   },
   {
-    id: "finance",
-    title: "Finance",
-    eyebrow: "Fiscal Governance",
-    description: "Overseeing financial architecture, cohort allocations, institutional budgeting, and capital governance.",
-    members: [
-      {
-        id: "parth-gakhar",
-        name: "Parth Gakhar",
-        position: "Finance Secretary",
-        image: "",
-        linkedin: "",
-      },
-    ],
-  },
-  {
     id: "department-heads",
     title: "Department Heads",
-    eyebrow: "Vertical Leadership",
-    description: "Spearheading venture incubation initiatives, day-to-day operations, and campus engagement tracks.",
+    eyebrow: "Department Heads",
     members: [
       {
         id: "sparsh-gupta",
@@ -118,14 +113,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         image: "",
         linkedin: "",
       },
-    ],
-  },
-  {
-    id: "marketing-external",
-    title: "Marketing & External Relations",
-    eyebrow: "Ecosystem Alliances",
-    description: "Directing public brand identity, digital reach, industry alliances, and external communications.",
-    members: [
+
       {
         id: "naman-jindal",
         name: "Naman Jindal",
@@ -133,6 +121,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         image: "",
         linkedin: "",
       },
+
       {
         id: "bhuvan-malhotra",
         name: "Bhuvan Malhotra",
@@ -140,14 +129,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         image: "",
         linkedin: "",
       },
-    ],
-  },
-  {
-    id: "technical-media",
-    title: "Technical & Media",
-    eyebrow: "Engineering & Craft",
-    description: "Architecting digital products, platforms, visual design, and multimedia narratives.",
-    members: [
+
       {
         id: "vidhi-saxena",
         name: "Vidhi Saxena",
@@ -155,6 +137,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         image: "",
         linkedin: "",
       },
+
       {
         id: "vansh-goyal",
         name: "Vansh Goyal",
@@ -167,8 +150,7 @@ export const executiveBoardGroups: TeamGroup[] = [
   {
     id: "co-conveners",
     title: "Co-Conveners",
-    eyebrow: "Program Architecture",
-    description: "Driving flagship summits, cohort schedules, competition execution, and stage logistics.",
+    eyebrow: "Co-Conveners",
     members: [
       {
         id: "vasu-garg",

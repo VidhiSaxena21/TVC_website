@@ -78,7 +78,7 @@ export function TeamPreview() {
                     {member.name}
                   </h3>
                   <p className="text-xs text-[#a5a49f] leading-relaxed">
-                    Executive Council // TIET Patiala
+                    Executive Board
                   </p>
                 </div>
 
