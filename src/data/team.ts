@@ -46,20 +46,6 @@ export const executiveBoardGroups: TeamGroup[] = [
     ],
   },
   {
-    id: "finance",
-    title: "Finance",
-    eyebrow: "FinSec",
-    members: [
-      {
-        id: "parth-gakhar",
-        name: "Parth Gakhar",
-        position: "Finance Secretary",
-        image: "",
-        linkedin: "",
-      },
-    ],
-  },
-  {
     id: "joint-secretaries",
     title: "Joint Secretaries",
     eyebrow: "JointSec",
@@ -82,6 +68,20 @@ export const executiveBoardGroups: TeamGroup[] = [
         id: "nishtha-saha",
         name: "Nishtha Saha",
         position: "Joint Secretary",
+        image: "",
+        linkedin: "",
+      },
+    ],
+  },
+  {
+    id: "finance",
+    title: "Finance",
+    eyebrow: "FinSec",
+    members: [
+      {
+        id: "parth-gakhar",
+        name: "Parth Gakhar",
+        position: "Finance Secretary",
         image: "",
         linkedin: "",
       },
