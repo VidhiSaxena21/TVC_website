@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,24 +17,7 @@ export function HeroReveal() {
   const taglineRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
 
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleMotionChange = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMotionChange);
-    return () => mediaQuery.removeEventListener("change", handleMotionChange);
-  }, []);
-
   useIsomorphicLayoutEffect(() => {
-    if (!mounted || prefersReducedMotion) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -249,7 +232,7 @@ export function HeroReveal() {
     return () => {
       ctx.revert();
     };
-  }, [mounted, prefersReducedMotion]);
+  }, []);
 
   const handleAssetLoaded = () => {
     if (typeof window !== "undefined") {
@@ -281,9 +264,7 @@ export function HeroReveal() {
         */}
         <div
           ref={lockupRef}
-          className={`flex flex-col md:flex-row items-center justify-center gap-5 sm:gap-6 md:gap-8 lg:gap-10 transition-none ${
-            prefersReducedMotion ? "!transform-none" : ""
-          }`}
+          className="flex flex-col md:flex-row items-center justify-center gap-5 sm:gap-6 md:gap-8 lg:gap-10 transition-none"
         >
           {/* Rocket Emblem */}
           <div
@@ -304,13 +285,12 @@ export function HeroReveal() {
           {/* Reveal Wrapper: Wordmark + Tagline */}
           <div
             ref={revealRef}
-            className={`flex flex-col items-center md:items-start text-center md:text-left ${
-              prefersReducedMotion ? "!opacity-100 !clip-path-none" : ""
-            }`}
+            className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             {/* Wordmark Container */}
             <div
               ref={wordmarkRef}
+              style={{ clipPath: "inset(0% 100% 0% 0%)", opacity: 0 }}
               className="relative w-[260px] xs:w-[300px] sm:w-[380px] md:w-[420px] lg:w-[500px] xl:w-[540px] aspect-[930/100] will-change-transform"
             >
               <Image
@@ -327,6 +307,7 @@ export function HeroReveal() {
             {/* Tagline Container */}
             <div
               ref={taglineRef}
+              style={{ opacity: 0 }}
               className="mt-3 sm:mt-4 md:mt-4 lg:mt-5 flex items-center justify-center md:justify-start gap-2.5 sm:gap-3 will-change-transform"
             >
               <div className="h-[2px] w-4 sm:w-6 bg-[#f5ed00] rounded-full hidden md:block" />
