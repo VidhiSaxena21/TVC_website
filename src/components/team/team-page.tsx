@@ -95,7 +95,7 @@ export function TeamPage() {
               </p>
             </div>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=edc%40thapar.edu"
+              href="https://mail.google.com/mail/?view=cm&to=edc%40thapar.edu"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 inline-flex items-center gap-2 bg-[#f5ed00] hover:bg-[#fff957] text-black font-semibold text-xs font-mono uppercase tracking-widest px-6 py-3.5 rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
