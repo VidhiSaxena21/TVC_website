@@ -1,17 +1,23 @@
-import { SiteFooter } from "@/components/shared/site-footer";
 import { SiteHeader } from "@/components/shared/site-header";
+import { SiteFooter } from "@/components/shared/site-footer";
+import { HeroReveal } from "@/components/home/hero-reveal";
+import { AboutSection } from "@/components/home/about-section";
+import { InitiativesPreview } from "@/components/home/initiatives-preview";
+import { TeamPreview } from "@/components/home/team-preview";
+import { ContactSection } from "@/components/home/contact-section";
 
 export function HomePage() {
   return (
-    <>
+    <div className="min-h-screen bg-[#000000] text-[#f4f3ef] flex flex-col selection:bg-[#f5ed00] selection:text-black">
       <SiteHeader />
-      <main id="main-content">
-        {/* Antigravity: implement the signature animated hero and home sections here. */}
-        <section aria-label="TVC homepage hero" className="min-h-screen" />
-        <section id="about" aria-labelledby="about-title" />
-        <section id="team-preview" aria-labelledby="team-preview-title" />
+      <main id="main-content" className="flex-grow">
+        <HeroReveal />
+        <AboutSection />
+        <InitiativesPreview />
+        <TeamPreview />
+        <ContactSection />
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }
