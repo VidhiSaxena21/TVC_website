@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --tvc-black: #000000;
+  --tvc-ink: #0b0b0a;
+  --tvc-paper: #f4f3ef;
+  --tvc-white: #ffffff;
+  --tvc-yellow: #f5ed00;
+  --tvc-muted: #a5a49f;
+  --tvc-line-dark: rgba(255, 255, 255, 0.16);
+  --tvc-line-light: rgba(10, 10, 10, 0.16);
+  --background: var(--tvc-black);
+  --foreground: var(--tvc-white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--tvc-black);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--tvc-yellow);
+  color: var(--tvc-black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--tvc-yellow);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
