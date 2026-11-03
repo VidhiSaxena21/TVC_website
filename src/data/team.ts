@@ -48,21 +48,6 @@ export const executiveBoardGroups: TeamGroup[] = [
     ],
   },
   {
-    id: "finance",
-    title: "Finance",
-    eyebrow: "Fiscal Governance",
-    description: "Overseeing financial architecture, cohort allocations, institutional budgeting, and capital governance.",
-    members: [
-      {
-        id: "parth-gakhar",
-        name: "Parth Gakhar",
-        position: "Finance Secretary",
-        image: "",
-        linkedin: "",
-      },
-    ],
-  },
-  {
     id: "joint-secretaries",
     title: "Joint Secretaries",
     eyebrow: "Operations & Governance",
@@ -86,6 +71,21 @@ export const executiveBoardGroups: TeamGroup[] = [
         id: "nishtha-saha",
         name: "Nishtha Saha",
         position: "Joint Secretary",
+        image: "",
+        linkedin: "",
+      },
+    ],
+  },
+  {
+    id: "finance",
+    title: "Finance",
+    eyebrow: "Fiscal Governance",
+    description: "Overseeing financial architecture, cohort allocations, institutional budgeting, and capital governance.",
+    members: [
+      {
+        id: "parth-gakhar",
+        name: "Parth Gakhar",
+        position: "Finance Secretary",
         image: "",
         linkedin: "",
       },
