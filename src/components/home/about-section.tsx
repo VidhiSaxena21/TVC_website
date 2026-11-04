@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AboutPhotoCarousel } from "@/components/home/about-photo-carousel";
 import {
   ArrowUpRight,
   Compass,
@@ -174,13 +175,8 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Photography Placement 1: Panoramic Campus Showcase */}
-          <EditorialPhotoFrame
-            label="PHOTO 01 // CAMPUS ECOSYSTEM"
-            location="TIET MAIN CAMPUS, PATIALA"
-            caption="Reserved for official TVC campus documentation: Student gathering spaces, innovation hubs, and campus infrastructure."
-            aspectRatio="aspect-[21/9]"
-          />
+          {/* TVC photo archive carousel — upload images to public/images/about */}
+          <AboutPhotoCarousel />
         </div>
 
         {/* ========================================================================= */}
