@@ -82,7 +82,7 @@ export function EventsPage() {
               <div className="relative">
                 <p className={`mb-4 font-mono text-[10px] uppercase tracking-[0.25em] ${event.theme === "matrix" ? "text-[#a3ff12]/70" : "text-white/40"}`}>{event.subtitle}</p>
                 <h2 className={`text-5xl font-semibold tracking-[-0.06em] transition-transform duration-500 group-hover:-translate-y-1 sm:text-6xl ${event.theme === "matrix" ? "text-[#e9ffe0]" : "text-[#f4f3ef]"}`}>{event.title}</h2>
-                <div className="grid grid-rows-[0fr] transition-all duration-500 group-hover:mt-5 group-hover:grid-rows-[1fr]">
+                <div className="mt-5 grid grid-rows-[1fr] transition-all duration-500 lg:mt-0 lg:grid-rows-[0fr] lg:group-hover:mt-5 lg:group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
                     <p className="max-w-md text-sm leading-relaxed text-white/65">{event.description}</p>
                     <p className={`mt-4 font-mono text-[9px] uppercase tracking-[0.16em] ${event.theme === "matrix" ? "text-[#a3ff12]/70" : "text-[#f5ed00]/70"}`}>{event.status}</p>
