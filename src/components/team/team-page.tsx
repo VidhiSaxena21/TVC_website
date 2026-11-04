@@ -6,7 +6,34 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export function TeamPage() {
-  const members = executiveBoardGroups.flatMap((group) => group.members);
+  const allMembers = executiveBoardGroups.flatMap((group) => group.members);
+  const memberOrder = [
+    "sanchit-sehgal",
+    "shashank-jain",
+    "devyansh-arya",
+    "aadish-jain",
+    "parth-gakhar",
+    "lakshya-goyal",
+    "nimit-malhotra",
+    "nishtha-saha",
+    "liya",
+    "naman-jindal",
+    "sparsh-gupta",
+    "bhuvan-malhotra",
+    "vidhi-saxena",
+    "vansh-goyal",
+    "vasu-garg",
+    "ruhan-garg",
+    "vishesh-nagpure",
+  ];
+  const orderedMembers = memberOrder.flatMap((id) => {
+    const member = allMembers.find((item) => item.id === id);
+    return member ? [member] : [];
+  });
+  const remainingMembers = allMembers.filter(
+    (member) => !memberOrder.includes(member.id),
+  );
+  const members = [...orderedMembers, ...remainingMembers];
 
   return (
     <div className="min-h-screen bg-[#000000] text-[#f4f3ef] flex flex-col selection:bg-[#f5ed00] selection:text-black">
