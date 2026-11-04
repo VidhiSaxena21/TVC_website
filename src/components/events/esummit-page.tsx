@@ -56,11 +56,11 @@ export function ESummitPage() {
           <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-12">
             <div>
               <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">01 / The experience</p>
-              <h2 className="max-w-lg text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl">A room full of ideas. A campus full of possibility.</h2>
+              <h2 className="max-w-lg text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl">Five days. Countless ideas. One entrepreneurial ecosystem.</h2>
             </div>
             <div className="space-y-6 text-base leading-relaxed text-white/65">
-              <p>E-Summit is Thapar Venture Club's flagship entrepreneurship experience, bringing together students, founders, professionals and curious minds to exchange ideas and explore what it takes to build.</p>
-              <p>Across speaker sessions, interactive conversations, workshops, competitions and networking opportunities, the summit creates a space for the campus entrepreneurial ecosystem to learn, connect and move forward.</p>
+              <p>The 12th edition of E-Summit took place from 18–22 February 2026, bringing together students, founders, professionals and curious minds for a five-day celebration of innovation, entrepreneurship and future technologies.</p>
+              <p>Across speaker sessions, interactive conversations, workshops, competitions and networking opportunities, E-Summit created a space for the campus entrepreneurial ecosystem to learn, connect and move forward.</p>
               <p className="border-l border-[#f5ed00]/60 pl-5 text-white/85">More than an event, E-Summit is a meeting point for people who want to turn ambition into action.</p>
             </div>
           </div>
@@ -90,12 +90,46 @@ export function ESummitPage() {
           </div>
         </section>
 
+        {/* E-Summit 2026 organising team gallery. Add official images to public/images/esummit/team/. */}
+        <section className="border-y border-white/10 bg-[#050505] py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <div className="mb-10 grid gap-5 sm:grid-cols-[1fr_auto] sm:items-end">
+              <div>
+                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">03 / The people behind it</p>
+                <h2 className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">The team that made it happen.</h2>
+              </div>
+              <p className="max-w-sm text-sm leading-relaxed text-white/45">A look back at the people, teamwork and moments behind E-Summit 2026.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {Array.from({ length: 8 }, (_, index) => {
+                const number = String(index + 1).padStart(2, "0");
+                return (
+                  <div key={number} className={`group relative overflow-hidden border border-white/10 bg-[#10100f] ${index === 0 || index === 5 ? "col-span-2 aspect-[2/1]" : "aspect-[4/5]"}`}>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.07),transparent_65%)]">
+                      <span className="font-mono text-3xl text-white/15">{number}</span>
+                      <span className="mt-2 font-mono text-[8px] uppercase tracking-[0.18em] text-white/25">Team photograph</span>
+                    </div>
+                    <img
+                      src={`/images/esummit/team/team-${number}.jpg`}
+                      alt={`E-Summit 2026 team photograph ${number}`}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      onError={(event) => { event.currentTarget.style.display = "none"; }}
+                    />
+                    <span className="absolute bottom-3 left-3 font-mono text-[9px] uppercase tracking-[0.16em] text-white/65">E-Summit '26 / {number}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* 2026 speaker collage: source is loaded and playback starts only when scrolled into view. */}
         <section className="border-y border-white/10 bg-[#080807] py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">03 / Voices of E-Summit 2026</p>
+                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">04 / Voices of E-Summit 2026</p>
                 <h2 className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">The people. The perspectives.</h2>
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-white/45">A closer look at the speakers and conversations that shaped this year's summit.</p>
