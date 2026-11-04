@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Camera } from "lucide-react";
 
 const slides = Array.from({ length: 10 }, (_, index) => ({
@@ -8,11 +8,28 @@ const slides = Array.from({ length: 10 }, (_, index) => ({
   number: String(index + 1).padStart(2, "0"),
 }));
 
+const AUTOPLAY_INTERVAL = 5000;
+
 export function AboutPhotoCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [failedImages, setFailedImages] = useState<string[]>([]);
+  const [isPaused, setIsPaused] = useState(false);
   const activeSlide = slides[activeIndex];
   const imageAvailable = !failedImages.includes(activeSlide.src);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    // Respect visitors who have requested reduced motion at OS/browser level.
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slides.length);
+    }, AUTOPLAY_INTERVAL);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused]);
 
   const showPrevious = () =>
     setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
@@ -20,14 +37,27 @@ export function AboutPhotoCarousel() {
     setActiveIndex((current) => (current + 1) % slides.length);
 
   return (
-    <div className="group relative overflow-hidden border border-white/[0.09] bg-[#141413]">
-      <div className="relative aspect-[21/9] min-h-[220px] w-full overflow-hidden sm:min-h-[300px]">
+    <div
+      className="group relative overflow-hidden border border-white/[0.09] bg-[#141413]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsPaused(false);
+        }
+      }}
+      aria-roledescription="carousel"
+      aria-label="Thapar Venture Club photo archive"
+    >
+      {/* A consistent stage keeps the layout steady; object-contain preserves each photo's full aspect ratio. */}
+      <div className="relative flex aspect-[21/9] min-h-[220px] w-full items-center justify-center overflow-hidden bg-[#090909] sm:min-h-[300px]">
         {imageAvailable ? (
           <img
             key={activeSlide.src}
             src={activeSlide.src}
             alt={`Thapar Venture Club campus and community moment ${activeSlide.number}`}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+            className="absolute inset-0 h-full w-full object-contain transition-opacity duration-500"
             onError={() =>
               setFailedImages((current) =>
                 current.includes(activeSlide.src) ? current : [...current, activeSlide.src],
@@ -57,7 +87,7 @@ export function AboutPhotoCarousel() {
             </p>
             <p className="mt-1 text-sm text-white/80">Thapar Venture Club · TIET Patiala</p>
           </div>
-          <p className="font-mono text-xs tabular-nums text-white/80">
+          <p className="font-mono text-xs tabular-nums text-white/80" aria-live="polite">
             {activeSlide.number}<span className="text-white/35"> / 10</span>
           </p>
         </div>
@@ -77,6 +107,9 @@ export function AboutPhotoCarousel() {
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <span className="mr-1 hidden font-mono text-[9px] uppercase tracking-[0.15em] text-white/35 sm:inline">
+            Auto · 5 sec
+          </span>
           <button
             type="button"
             onClick={showPrevious}
