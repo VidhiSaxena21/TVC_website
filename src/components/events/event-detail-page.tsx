@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, CalendarDays, Play, Radio, Terminal } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CalendarDays, Terminal } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
+import { ESummitPage } from "@/components/events/esummit-page";
 
 type EventSlug = "tvc-x-sat" | "e-summit";
 
@@ -26,10 +27,10 @@ const eventContent = {
 
 // Add the final registration URL here when the form is ready.
 const TVC_X_SAT_REGISTRATION_URL = "";
-// Upload the aftermovie to public/videos/tvc-x-sat-aftermovie.mp4, then set this to true.
-const TVC_X_SAT_AFTERMOVIE_AVAILABLE = false;
 
 export function EventDetailPage({ event }: { event: EventSlug }) {
+  if (event === "e-summit") return <ESummitPage />;
+
   const content = eventContent[event];
   const isMatrix = content.accent === "matrix";
 
@@ -87,32 +88,6 @@ export function EventDetailPage({ event }: { event: EventSlug }) {
                   <p>Enter a world where every problem is a signal and every decision changes the outcome. TVC × SAT brings together participants ready to think critically, collaborate and build solutions under pressure.</p>
                   <p>Expect a challenge-led experience shaped around strategy, creativity and execution. Detailed tracks, timelines and participation information will be shared through the official registration announcement.</p>
                 </div>
-              </div>
-            </section>
-
-            <section id="aftermovie" className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
-              <div className="mb-8 flex items-end justify-between gap-4">
-                <div>
-                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]">02 / Relive the energy</p>
-                  <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">The aftermovie.</h2>
-                </div>
-                <Radio className="hidden h-6 w-6 text-[#a3ff12] sm:block" />
-              </div>
-              <div className="relative flex aspect-video items-center justify-center overflow-hidden border border-[#a3ff12]/25 bg-[#050a05]">
-                {TVC_X_SAT_AFTERMOVIE_AVAILABLE ? (
-                  <video controls playsInline preload="metadata" className="h-full w-full" poster="/events/tvc-x-sat-aftermovie-poster.jpg">
-                    <source src="/videos/tvc-x-sat-aftermovie.mp4" type="video/mp4" />
-                    Your browser does not support HTML video.
-                  </video>
-                ) : (
-                  <div className="px-6 text-center">
-                    <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#a3ff12]/40 text-[#a3ff12]">
-                      <Play className="ml-1 h-6 w-6" />
-                    </div>
-                    <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#a3ff12]">Transmission pending</p>
-                    <p className="mt-3 text-sm text-white/45">The TVC × SAT aftermovie will be available here soon.</p>
-                  </div>
-                )}
               </div>
             </section>
 
