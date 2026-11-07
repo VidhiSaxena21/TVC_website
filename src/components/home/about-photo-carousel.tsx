@@ -52,20 +52,34 @@ export function AboutPhotoCarousel() {
     >
       {/* A consistent stage keeps the layout steady; object-contain preserves each photo's full aspect ratio. */}
       <div className="relative flex aspect-[21/9] min-h-[220px] w-full items-center justify-center overflow-hidden bg-[#090909] sm:min-h-[300px]">
-        {imageAvailable ? (
-          <img
-            key={activeSlide.src}
-            src={activeSlide.src}
-            alt={`Thapar Venture Club campus and community moment ${activeSlide.number}`}
-            className="absolute inset-0 h-full w-full object-contain transition-opacity duration-500"
-            onError={() =>
-              setFailedImages((current) =>
-                current.includes(activeSlide.src) ? current : [...current, activeSlide.src],
-              )
-            }
-          />
-        ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.08),transparent_65%)] px-6 text-center">
+        {slides.map((slide, index) =>
+          !failedImages.includes(slide.src) ? (
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={
+                index === activeIndex
+                  ? `Thapar Venture Club campus and community moment ${slide.number}`
+                  : ""
+              }
+              aria-hidden={index !== activeIndex}
+              loading="eager"
+              decoding="async"
+              className={`absolute inset-0 h-full w-full object-contain transition-[opacity,transform] duration-1000 ease-in-out motion-reduce:transition-none ${
+                index === activeIndex
+                  ? "z-[1] scale-100 opacity-100"
+                  : "z-0 scale-[1.015] opacity-0"
+              }`}
+              onError={() =>
+                setFailedImages((current) =>
+                  current.includes(slide.src) ? current : [...current, slide.src],
+                )
+              }
+            />
+          ) : null,
+        )}
+        {!imageAvailable ? (
+          <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.08),transparent_65%)] px-6 text-center">
             <Camera className="mb-4 h-8 w-8 text-[#f5ed00]/70" />
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#f4f3ef]/70">
               TVC Photo Archive
@@ -74,7 +88,7 @@ export function AboutPhotoCarousel() {
               Image {activeSlide.number} · Upload photo to activate
             </p>
           </div>
-        )}
+        ) : null}
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
         <div className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.2em] text-white/75 sm:left-6 sm:top-6">
