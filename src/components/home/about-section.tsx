@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { AboutPhotoCarousel } from "@/components/home/about-photo-carousel";
 import {
   ArrowUpRight,
@@ -20,6 +21,7 @@ interface PhotoFrameProps {
   label: string;
   location: string;
   caption: string;
+  imageSrc?: string;
   aspectRatio?: string;
   className?: string;
 }
@@ -28,6 +30,7 @@ function EditorialPhotoFrame({
   label,
   location,
   caption,
+  imageSrc,
   aspectRatio = "aspect-[16/10]",
   className = "",
 }: PhotoFrameProps) {
@@ -35,6 +38,16 @@ function EditorialPhotoFrame({
     <div
       className={`group relative bg-[#141413] border border-white/[0.08] hover:border-[#f5ed00]/40 rounded-sm overflow-hidden flex flex-col justify-between p-5 sm:p-6 transition-all duration-300 ${aspectRatio} ${className}`}
     >
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={label.replace(/^PHOTO \\d+ \/\/ /, "").toLowerCase()}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+      ) : null}
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/45" />
       {/* Corner crosshairs */}
       <div className="absolute top-2 left-2 text-[10px] font-mono text-white/20 select-none z-10">+</div>
       <div className="absolute top-2 right-2 text-[10px] font-mono text-white/20 select-none z-10">+</div>
@@ -347,6 +360,7 @@ export function AboutSection() {
               <div className="lg:col-span-6">
                 <EditorialPhotoFrame
                   label="PHOTO 04 // E-SUMMIT AUDITORIUM"
+                  imageSrc="/images/about/what-we-do-01.jpg"
                   location="AUDITORIUM COMPLEX"
                   caption="Reserved for official E-Summit photography: Mainstage keynotes, panel discussions, and packed auditorium crowds."
                   aspectRatio="aspect-[16/11]"
@@ -360,6 +374,7 @@ export function AboutSection() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <EditorialPhotoFrame
                   label="PHOTO 05 // ENTRE HUB WORKSHOPS"
+                  imageSrc="/images/about/what-we-do-02.jpg"
                   location="CAMPUS LECTURE HALL"
                   caption="Reserved for hands-on skill workshops: BMC modeling, resume critiques, and interactive peer working groups."
                   aspectRatio="aspect-[4/5] lg:aspect-[3/4]"
@@ -507,6 +522,7 @@ export function AboutSection() {
               <div className="lg:col-span-6">
                 <EditorialPhotoFrame
                   label="PHOTO 06 // CASE COMPETITIONS ARENA"
+                  imageSrc="/images/about/what-we-do-03.jpeg"
                   location="COMPETITION AUDITORIUM"
                   caption="Reserved for TVC x SAT and case battle photography: High-stakes presentations, judging juries, and podium ceremonies."
                   aspectRatio="aspect-[16/11]"
@@ -520,6 +536,7 @@ export function AboutSection() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <EditorialPhotoFrame
                   label="PHOTO 07 // FIRESIDE SESSIONS"
+                  imageSrc="/images/about/what-we-do-04.jpg"
                   location="AMPHITHEATRE"
                   caption="Reserved for guest speaker photography: Startup founders, unicorn entrepreneurs, and Shark Tank personalities in dialogue."
                   aspectRatio="aspect-[4/3] lg:aspect-[1/1]"
