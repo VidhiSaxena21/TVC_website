@@ -46,7 +46,7 @@ export function TeamPhotoSequence() {
     <section
       ref={sectionRef}
       aria-label="A glimpse of the TVC team"
-      className="relative h-[560vh] bg-black sm:h-[620vh]"
+      className="relative h-[420vh] bg-black sm:h-[460vh]"
     >
       <div className="sticky top-0 h-[100svh] min-h-[620px] overflow-hidden bg-[#050505]">
         {frames.map((frame, index) => {
