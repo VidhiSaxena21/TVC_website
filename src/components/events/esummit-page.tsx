@@ -21,7 +21,7 @@ export function ESummitPage() {
             preload="auto"
             poster="/events/esummit-2025-poster.jpg"
           >
-            <source src="/videos/esummit-2025-aftermovie.mp4" type="video/mp4" />
+            <source src="/videos/esummit-aftermovie.mp4" type="video/mp4" />
           </video>
           <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/45 to-black" />
           <div className="mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-between px-6 pb-12 pt-36 sm:px-8 sm:pb-16 sm:pt-44 lg:px-12">
@@ -40,7 +40,7 @@ export function ESummitPage() {
                   Explore the experience <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <span className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/55">
-                  <VolumeX className="h-3.5 w-3.5" /> Sound off · 2025 aftermovie
+                  <VolumeX className="h-3.5 w-3.5" /> Sound off · official aftermovie
                 </span>
               </div>
             </div>
