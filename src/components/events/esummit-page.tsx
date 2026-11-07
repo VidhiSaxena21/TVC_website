@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, CalendarDays, Play, VolumeX, Lightbulb, Users, Rocket } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { PlayVideoOnView } from "@/components/events/play-video-on-view";
@@ -58,7 +57,6 @@ export function ESummitPage() {
                 <a href="#experience" className="inline-flex items-center gap-3 bg-[#f5ed00] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-transform hover:-translate-y-1">
                   Explore the summit <ArrowUpRight className="h-4 w-4" />
                 </a>
-                <a href="https://esummit26.tvctiet.in/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white/75 transition-colors hover:text-[#f5ed00]">
                   Visit E-Summit'26 <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -166,7 +164,6 @@ export function ESummitPage() {
               <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#f5ed00]">TVC · Ideate, Ascend, Lead</p>
               <h2 className="text-2xl font-semibold sm:text-3xl">The next chapter starts with an idea.</h2>
             </div>
-            <a href="https://esummit26.tvctiet.in/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 border border-white/20 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-white/75 transition-colors hover:border-[#f5ed00] hover:text-[#f5ed00]">
               Visit E-Summit'26 website <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
