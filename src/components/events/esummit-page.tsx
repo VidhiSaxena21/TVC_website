@@ -8,11 +8,11 @@ import { PlayVideoOnView } from "@/components/events/play-video-on-view";
 import { ESummitTeamGallery } from "@/components/events/esummit-team-gallery";
 
 const summitEvents = [
-  { name: "Unizunicorn", date: "February 6", time: "6:00 PM", venue: "LT202", description: "Bid. Build. Pivot. Pitch. A fast-paced entrepreneurial battlefield where campus locations turn into powerful startup ideas.", image: "/images/esummit/events/unizunicorn.jpg" },
+  { name: "Uni2Unicorn", date: "February 6", time: "6:00 PM", venue: "LT202", description: "Bid. Build. Pivot. Pitch. A fast-paced entrepreneurial battlefield where campus locations turn into powerful startup ideas.", image: "/images/esummit/events/uni2unicorn.jpeg" },
   { name: "Boardroom", date: "February 13", time: "9:00 PM", venue: "Activity Space", description: "Innovate, market, survive crises, and scale your startup in this high-stakes business simulation.", image: "/images/esummit/events/boardroom.jpg" },
   { name: "Opening Ceremony", date: "February 18", time: "6:00 PM", venue: "Main Auditorium", description: "An inspiring inauguration marking the beginning of E-Summit with a distinguished keynote address.", image: "/images/esummit/events/opening-ceremony.jpg" },
-  { name: "Internship Fair", date: "February 19", time: "3:00 PM", venue: "K Lawns", description: "Connecting students with recruiters and startups to unlock internships and real-world opportunities.", image: "/images/esummit/events/internship-fair.jpg" },
-  { name: "Biz Conclave", date: "February 21", time: "5:00 PM", venue: "Main Auditorium", description: "A formal conclave bringing together industry leaders to share insights across business, entrepreneurship, finance, and technology.", image: "/images/esummit/events/biz-conclave.jpg" },
+  { name: "Internship Fair", date: "February 19", time: "3:00 PM", venue: "K Lawns", description: "Connecting students with recruiters and startups to unlock internships and real-world opportunities.", image: "/images/esummit/events/internship-fair.jpeg" },
+  { name: "Biz Conclave", date: "February 21", time: "5:00 PM", venue: "LT102", description: "A formal conclave bringing together industry leaders to share insights across business, entrepreneurship, finance, and technology.", image: "/images/esummit/events/biz-conclave.jpeg" },
   { name: "Unwind", date: "February 22", time: "5:30 PM", venue: "OAT", description: "An unforgettable evening where ideas, creativity, and connections come alive.", image: "/images/esummit/events/unwind.jpg" },
 ];
 
