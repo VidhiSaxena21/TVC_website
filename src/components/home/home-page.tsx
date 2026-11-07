@@ -4,7 +4,6 @@ import { HeroReveal } from "@/components/home/hero-reveal";
 import { AboutSection } from "@/components/home/about-section";
 import { TeamPreview } from "@/components/home/team-preview";
 import { ContactSection } from "@/components/home/contact-section";
-import { HomeSpotlight } from "@/components/home/home-spotlight";
 
 export function HomePage() {
   return (
@@ -12,8 +11,8 @@ export function HomePage() {
       <SiteHeader />
       <main id="main-content" className="flex-grow">
         <HeroReveal />
-        <HomeSpotlight />
         <AboutSection />
+        <HomeSpotlight />
         <TeamPreview />
         <ContactSection />
       </main>
