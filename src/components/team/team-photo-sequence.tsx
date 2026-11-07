@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const frames = [
-  { src: "/images/team/tvc-team-01.webp", alt: "TVC team gathered at E-Summit 2026" },
-  { src: "/images/team/tvc-team-02.webp", alt: "TVC members sharing a candid moment" },
-  { src: "/images/team/tvc-team-03.webp", alt: "The TVC team together in an auditorium" },
-  { src: "/images/team/tvc-team-04.webp", alt: "TVC members at a team gathering" },
-  { src: "/images/team/tvc-team-05.webp", alt: "TVC team at an outdoor event" },
-  { src: "/images/team/tvc-team-06.webp", alt: "A smaller TVC team group photograph" },
-  { src: "/images/team/tvc-team-07.webp", alt: "TVC members at an event" },
+  { src: "/images/team/tvc-team-01.png", alt: "TVC team gathered at E-Summit 2026" },
+  { src: "/images/team/tvc-team-02.png", alt: "TVC members sharing a candid moment" },
+  { src: "/images/team/tvc-team-03.png", alt: "The TVC team together in an auditorium" },
+  { src: "/images/team/tvc-team-04.png", alt: "TVC members at a team gathering" },
+  { src: "/images/team/tvc-team-05.png", alt: "TVC team at an outdoor event" },
+  { src: "/images/team/tvc-team-06.png", alt: "A smaller TVC team group photograph" },
+  { src: "/images/team/tvc-team-07.jpeg", alt: "TVC members at an event" },
 ];
 
 export function TeamPhotoSequence() {
