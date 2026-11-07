@@ -36,16 +36,16 @@ export function PrimusHero() {
     };
   }, []);
 
-  // Give the opening and title reveal substantially more scroll room.
-  const codeReveal = range(progress, 0.015, 0.20);
-  const titleReveal = range(progress, 0.12, 0.40);
-  const detailsReveal = range(progress, 0.39, 0.53);
-  const exitReveal = range(progress, 0.91, 1);
+  // Reveal the atmosphere and title early, then keep the complete hero on screen.
+  const codeReveal = range(progress, 0.015, 0.16);
+  const titleReveal = range(progress, 0.10, 0.27);
+  const detailsReveal = range(progress, 0.25, 0.39);
+  const exitReveal = range(progress, 0.965, 1);
 
   return (
-    <section ref={sectionRef} aria-label="PRIMUS 2026 introduction" className="relative h-[360vh] bg-black">
+    <section ref={sectionRef} aria-label="PRIMUS 2026 introduction" className="relative h-[280vh] bg-black">
       <div className="sticky top-0 flex h-[100svh] min-h-[600px] items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 transition-opacity duration-300" style={{ opacity: codeReveal * 0.98 }}>
+        <div className="absolute inset-0" style={{ opacity: codeReveal * 0.98 }}>
           <MatrixRain />
         </div>
 
@@ -56,15 +56,15 @@ export function PrimusHero() {
         <div
           className="relative z-10 flex w-full flex-col items-center px-4 text-center"
           style={{
-            opacity: 1 - exitReveal * 0.5,
-            transform: `translateY(${exitReveal * -34}px)`,
+            opacity: 1 - exitReveal,
+            transform: `translateY(${exitReveal * -24}px)`,
           }}
         >
           <p
             className="mb-8 font-mono text-[9px] uppercase tracking-[0.42em] text-[#a3ff12] sm:text-[10px]"
             style={{
               opacity: titleReveal,
-              transform: `translateY(${(1 - titleReveal) * 24}px)`,
+              transform: `translateY(${(1 - titleReveal) * 20}px)`,
             }}
           >
             TVC × SAT <span className="mx-2 text-white/25">//</span> THE MATRIX CHALLENGE
@@ -74,10 +74,10 @@ export function PrimusHero() {
             className="whitespace-nowrap text-[clamp(3.1rem,13.5vw,12rem)] font-black leading-[0.8] tracking-[-0.095em] text-[#edffe8]"
             style={{
               opacity: titleReveal,
-              transform: `perspective(900px) translateY(${(1 - titleReveal) * 54}px) scale(${0.48 + titleReveal * 0.52}) rotateX(${(1 - titleReveal) * -16}deg)`,
+              transform: `perspective(900px) translateY(${(1 - titleReveal) * 38}px) scale(${0.58 + titleReveal * 0.42}) rotateX(${(1 - titleReveal) * -10}deg)`,
               transformOrigin: "center center",
               textShadow: "0 0 18px rgba(163,255,18,0.22), 0 0 70px rgba(63,255,87,0.2)",
-              filter: `blur(${(1 - titleReveal) * 18}px)`,
+              filter: `blur(${(1 - titleReveal) * 12}px)`,
             }}
           >
             PRIMUS<span className="text-[#a3ff12]">’26</span>
@@ -88,7 +88,7 @@ export function PrimusHero() {
             className="mt-6 font-mono text-[clamp(0.62rem,1.5vw,0.95rem)] uppercase tracking-[0.19em] text-[#d1ffcb] sm:tracking-[0.28em]"
             style={{
               opacity: detailsReveal,
-              transform: `translateY(${(1 - detailsReveal) * 18}px)`,
+              transform: `translateY(${(1 - detailsReveal) * 14}px)`,
             }}
           >
             Where every decision connects.
@@ -98,7 +98,7 @@ export function PrimusHero() {
             className="mt-9 flex flex-wrap justify-center gap-3"
             style={{
               opacity: detailsReveal,
-              transform: `translateY(${(1 - detailsReveal) * 16}px)`,
+              transform: `translateY(${(1 - detailsReveal) * 12}px)`,
             }}
           >
             <a href="#tracks" className="group inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
@@ -111,7 +111,7 @@ export function PrimusHero() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 font-mono text-[9px] uppercase tracking-[0.22em] text-white/45" style={{ opacity: 1 - detailsReveal * 0.75 }}>
-          <span>{progress < 0.12 ? "Scroll to enter" : "The system is yours"}</span>
+          <span>{progress < 0.10 ? "Scroll to enter" : "The system is yours"}</span>
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </div>
 
