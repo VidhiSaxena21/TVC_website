@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
 import { MatrixRain } from "@/components/events/matrix-rain";
 
 export function PrimusHero() {
@@ -54,6 +54,11 @@ export function PrimusHero() {
           <span>20 November · 10 PM</span>
           <span className="text-[#a3ff12]/50">—</span>
           <span>21 November · 8 AM</span>
+        </div>
+
+        <div className="mt-4 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/60 transition-all delay-600 duration-700 sm:text-[10px]" style={{ opacity: revealed ? 1 : 0, transform: `translateY(${revealed ? 0 : 12}px)` }}>
+          <MapPin className="h-3.5 w-3.5 text-[#a3ff12]" />
+          <span>Computer Science and Engineering Department · TIET Patiala</span>
         </div>
 
         <div
