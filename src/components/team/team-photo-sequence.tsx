@@ -7,9 +7,9 @@ const frames = [
   { src: "/images/team/tvc-team-02.png", alt: "TVC members sharing a candid moment" },
   { src: "/images/team/tvc-team-03.png", alt: "The TVC team together in an auditorium" },
   { src: "/images/team/tvc-team-04.png", alt: "TVC members at a team gathering" },
-  { src: "/images/team/tvc-team-05.png", alt: "TVC team at an outdoor event" },
+  { src: "/images/team/tvc-team-05.jpeg", alt: "TVC team at an outdoor event" },
   { src: "/images/team/tvc-team-06.png", alt: "A smaller TVC team group photograph" },
-  { src: "/images/team/tvc-team-07.jpeg", alt: "TVC members at an event" },
+  { src: "/images/team/tvc-team-07.png", alt: "TVC members at an event" },
 ];
 
 export function TeamPhotoSequence() {
