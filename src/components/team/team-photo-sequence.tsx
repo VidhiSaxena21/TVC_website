@@ -12,6 +12,8 @@ const frames = [
   { src: "/images/team/tvc-team-07.png", alt: "TVC members at an event" },
 ];
 
+const FRAME_SEQUENCE_END = 0.9;
+
 export function TeamPhotoSequence() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeFrame, setActiveFrame] = useState(0);
@@ -27,7 +29,9 @@ export function TeamPhotoSequence() {
         const rect = section.getBoundingClientRect();
         const scrollableDistance = section.offsetHeight - window.innerHeight;
         const progress = Math.min(1, Math.max(0, -rect.top / Math.max(1, scrollableDistance)));
-        const nextFrame = Math.min(frames.length - 1, Math.floor(progress * frames.length));
+        // Every photo gets the same scroll interval; the final photo gets an extra hold.
+        const sequenceProgress = Math.min(1, progress / FRAME_SEQUENCE_END);
+        const nextFrame = Math.min(frames.length - 1, Math.floor(sequenceProgress * frames.length));
         setActiveFrame(nextFrame);
       });
     };
@@ -46,7 +50,7 @@ export function TeamPhotoSequence() {
     <section
       ref={sectionRef}
       aria-label="A glimpse of the TVC team"
-      className="relative h-[420vh] bg-black sm:h-[460vh]"
+      className="relative h-[460vh] bg-black"
     >
       <div className="sticky top-0 h-[100svh] min-h-[620px] overflow-hidden bg-[#050505]">
         {frames.map((frame, index) => {
@@ -95,7 +99,7 @@ export function TeamPhotoSequence() {
         <div className="absolute bottom-0 left-0 h-px w-full bg-white/15">
           <div
             className="h-full bg-[#f5ed00] transition-[width] duration-200"
-            style={{ width: `${((activeFrame + 1) / frames.length) * 100}%` }}
+            style={{ width: `${Math.min(100, (activeFrame + 1) / frames.length * 100)}%` }}
           />
         </div>
       </div>
