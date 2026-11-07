@@ -1,4 +1,7 @@
-import { ArrowUpRight, Binary, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Cpu, Layers3, MapPin, Users } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { ArrowDown, ArrowUpRight, Binary, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Cpu, Layers3, MapPin, Users } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { PrimusHero } from "@/components/events/primus-hero";
@@ -37,6 +40,9 @@ const tracks = [
 ];
 
 export function PrimusPage() {
+  const [selectedTrack, setSelectedTrack] = useState<string | null>(null);
+  const activeTrack = tracks.find((track) => track.number === selectedTrack);
+
   return (
     <div className="flex min-h-screen flex-col overflow-hidden bg-[#020503] text-[#efffed] selection:bg-[#a3ff12] selection:text-black">
       <SiteHeader />
@@ -101,27 +107,52 @@ export function PrimusPage() {
             <div className="grid gap-4 lg:grid-cols-3">
               {tracks.map((track) => {
                 const Icon = track.icon;
+                const isSelected = selectedTrack === track.number;
                 return (
-                  <article key={track.number} className="group relative flex min-h-[420px] flex-col overflow-hidden border border-[#a3ff12]/15 bg-[#071009]/85 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#a3ff12]/55 hover:bg-[#0a160c] sm:p-8">
-                    <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${track.accent} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
-                    <div className="relative flex items-start justify-between">
+                  <button
+                    key={track.number}
+                    type="button"
+                    aria-expanded={isSelected}
+                    aria-controls="primus-track-details"
+                    onClick={() => setSelectedTrack(isSelected ? null : track.number)}
+                    className={`group relative flex min-h-[300px] w-full flex-col overflow-hidden border p-7 text-left transition-all duration-300 sm:p-8 ${isSelected ? "border-[#a3ff12]/70 bg-[#0a160c]" : "border-[#a3ff12]/15 bg-[#071009]/85 hover:-translate-y-1 hover:border-[#a3ff12]/50 hover:bg-[#0a160c]"}`}
+                  >
+                    <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${track.accent} to-transparent transition-opacity duration-300 ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                    <div className="relative flex w-full items-start justify-between">
                       <span className="font-mono text-[10px] tracking-[0.2em] text-[#a3ff12]/65">TRACK / {track.number}</span>
-                      <span className="flex h-11 w-11 items-center justify-center border border-[#a3ff12]/25 text-[#a3ff12] transition-all duration-500 group-hover:rotate-6 group-hover:bg-[#a3ff12] group-hover:text-black"><Icon className="h-5 w-5" /></span>
+                      <span className={`flex h-11 w-11 items-center justify-center border transition-all duration-300 ${isSelected ? "border-[#a3ff12] bg-[#a3ff12] text-black" : "border-[#a3ff12]/25 text-[#a3ff12] group-hover:bg-[#a3ff12] group-hover:text-black"}`}><Icon className="h-5 w-5" /></span>
                     </div>
-                    <div className="relative mt-auto pt-16">
+                    <div className="relative mt-auto w-full pt-12">
                       <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.24em] text-[#a3ff12]/65">{track.code}</p>
                       <h3 className="text-3xl font-semibold leading-tight tracking-[-0.045em] text-white sm:text-4xl">{track.title}</h3>
                       <p className="mt-3 text-sm text-white/65">{track.descriptor}</p>
-                      <p className="mt-5 min-h-[140px] text-sm leading-relaxed text-white/45">{track.description}</p>
-                      <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">
-                        {track.tags.map((tag) => <span key={tag} className="border border-white/10 px-2.5 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">{tag}</span>)}
+                      <div className="mt-7 flex items-center justify-between border-t border-white/10 pt-5">
+                        <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-[#a3ff12]">{isSelected ? "Close details" : "Explore track"}</span>
+                        <ArrowDown className={`h-4 w-4 text-[#a3ff12] transition-transform duration-300 ${isSelected ? "rotate-180" : ""}`} />
                       </div>
                     </div>
                     <div aria-hidden="true" className="absolute -bottom-12 -right-4 font-mono text-[140px] font-bold leading-none text-[#a3ff12]/[0.035] transition-transform duration-700 group-hover:-translate-y-3">{track.number}</div>
-                  </article>
+                  </button>
                 );
               })}
             </div>
+
+            {activeTrack && (
+              <div id="primus-track-details" className="mt-6 border border-[#a3ff12]/25 bg-[#071009] p-7 sm:p-10" aria-live="polite">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="max-w-3xl">
+                    <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.22em] text-[#a3ff12]">TRACK / {activeTrack.number} · {activeTrack.code}</p>
+                    <h3 className="text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">{activeTrack.title}</h3>
+                    <p className="mt-3 text-base text-white/65">{activeTrack.descriptor}</p>
+                    <p className="mt-6 text-sm leading-relaxed text-white/60 sm:text-base">{activeTrack.description}</p>
+                  </div>
+                  <button type="button" onClick={() => setSelectedTrack(null)} className="w-fit border border-white/15 px-4 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/60 transition-colors hover:border-[#a3ff12]/60 hover:text-[#a3ff12]">Close ×</button>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-6">
+                  {activeTrack.tags.map((tag) => <span key={tag} className="border border-[#a3ff12]/20 bg-[#a3ff12]/5 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-[#d9ffd1]/70">{tag}</span>)}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
