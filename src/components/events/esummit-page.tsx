@@ -106,7 +106,7 @@ export function ESummitPage() {
               {summitEvents.map((event, index) => (
                 <article key={event.name} className="w-[82vw] max-w-[430px] shrink-0 snap-start border border-white/10 bg-[#10100e] sm:w-[430px]">
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#171717]">
-                    <img src={event.image} alt={`${event.name} at E-Summit 2026`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" onError={(event) => { event.currentTarget.style.display = "none"; }} />
+                    <img src={event.image} alt={`${event.name} at E-Summit 2026`} loading="lazy" className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" onError={(event) => { event.currentTarget.style.display = "none"; }} />
                     <div className="absolute inset-0 -z-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(100,130,255,0.12),transparent_65%)]">
                       <span className="font-mono text-3xl text-white/20">0{index + 1}</span>
                       <span className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-white/30">Event photograph</span>
