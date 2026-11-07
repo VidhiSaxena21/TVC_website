@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, CalendarDays, Play, VolumeX } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { PlayVideoOnView } from "@/components/events/play-video-on-view";
@@ -60,8 +61,6 @@ export function ESummitPage() {
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a href="#experience" className="inline-flex items-center gap-3 bg-[#f5ed00] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-transform hover:-translate-y-1">
                   Explore the summit <ArrowUpRight className="h-4 w-4" />
-                </a>
-                  Visit E-Summit'26 <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>
@@ -169,8 +168,6 @@ export function ESummitPage() {
               <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#f5ed00]">TVC · Ideate, Ascend, Lead</p>
               <h2 className="text-2xl font-semibold sm:text-3xl">The next chapter starts with an idea.</h2>
             </div>
-              Visit E-Summit'26 website <ArrowUpRight className="h-4 w-4" />
-            </a>
           </div>
         </section>
       </main>
