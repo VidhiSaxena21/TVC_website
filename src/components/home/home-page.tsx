@@ -12,7 +12,6 @@ export function HomePage() {
       <main id="main-content" className="flex-grow">
         <HeroReveal />
         <AboutSection />
-        <HomeSpotlight />
         <TeamPreview />
         <ContactSection />
       </main>
