@@ -1,17 +1,18 @@
 "use client";
 
-const photos = Array.from({ length: 8 }, (_, index) => ({
+const photos = Array.from({ length: 9 }, (_, index) => ({
   number: String(index + 1).padStart(2, "0"),
   wide: index === 0 || index === 5,
+  featured: index === 8,
 }));
 
 export function ESummitTeamGallery() {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-      {photos.map(({ number, wide }) => (
+      {photos.map(({ number, wide, featured }) => (
         <div
           key={number}
-          className={`group relative overflow-hidden border border-white/10 bg-[#10100f] ${wide ? "col-span-2 aspect-[2/1]" : "aspect-[4/5]"}`}
+          className={`group relative overflow-hidden border border-white/10 bg-[#10100f] ${featured ? "col-span-2 aspect-[16/9] sm:col-span-4 sm:aspect-[2.4/1]" : wide ? "col-span-2 aspect-[2/1]" : "aspect-[4/5]"}`}
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.07),transparent_65%)]">
             <span className="font-mono text-3xl text-white/15">{number}</span>
