@@ -9,14 +9,14 @@ const events = [
   {
     id: "tvc-x-sat",
     title: "PRIMUS’26",
-    subtitle: "Break the code. Own the outcome.",
+    subtitle: "Where every decision connects.",
     type: "TVC × SAT · The Matrix Challenge",
     description:
       "Three arenas. Product, consulting and finance. Step into the Matrix and turn sharp thinking into decisive action.",
     href: "/events/tvc-x-sat",
     theme: "matrix",
     number: "01",
-    status: "Registration details coming soon",
+    status: "Registration open",
   },
   {
     id: "e-summit",
