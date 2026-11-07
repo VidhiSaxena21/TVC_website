@@ -4,6 +4,7 @@ import { executiveBoardGroups } from "@/data/team";
 import { MemberCard } from "@/components/team/member-card";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { TeamPhotoSequence } from "@/components/team/team-photo-sequence";
 
 export function TeamPage() {
   const allMembers = executiveBoardGroups.flatMap((group) => group.members);
@@ -40,6 +41,8 @@ export function TeamPage() {
       <SiteHeader />
 
       <main id="main-content" className="flex-grow">
+        <TeamPhotoSequence />
+
         <section
           aria-labelledby="team-hero-heading"
           className="pt-32 pb-16 sm:pt-40 sm:pb-20 border-b border-white/[0.08] relative overflow-hidden"
