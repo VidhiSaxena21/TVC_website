@@ -41,7 +41,7 @@ function EditorialPhotoFrame({
       {imageSrc ? (
         <Image
           src={imageSrc}
-          alt={label.replace(/^PHOTO \\d+ \/\/ /, "").toLowerCase()}
+          alt={label}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -60,20 +60,21 @@ function EditorialPhotoFrame({
         <span className="text-white/40">{location}</span>
       </div>
 
-      {/* Center Camera & Placeholder Badge */}
-      <div className="relative z-10 my-auto text-center py-4">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 rounded-full border border-white/10 flex items-center justify-center text-[#f5ed00] group-hover:scale-105 group-hover:border-[#f5ed00]/40 transition-all duration-300">
-          <Camera className="w-4 h-4 sm:w-5 sm:h-5 opacity-80" />
+      {!imageSrc ? (
+        <div className="relative z-10 my-auto text-center py-4">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 rounded-full border border-white/10 flex items-center justify-center text-[#f5ed00]">
+            <Camera className="w-4 h-4 sm:w-5 sm:h-5 opacity-80" />
+          </div>
+          <p className="font-mono text-[11px] sm:text-xs text-[#a5a49f] max-w-xs mx-auto leading-relaxed">
+            {caption}
+          </p>
         </div>
-        <p className="font-mono text-[11px] sm:text-xs text-[#a5a49f] max-w-xs mx-auto leading-relaxed">
-          {caption}
-        </p>
-      </div>
+      ) : null}
 
       {/* Bottom Metadata Strip */}
       <div className="relative z-10 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] sm:text-[11px] font-mono">
         <span className="text-[#f4f3ef]/80">Official Documentation</span>
-        <span className="text-[#f5ed00]/80">Archive Selection TBC</span>
+        <span className="text-[#f5ed00]/80">{imageSrc ? "TVC ARCHIVE" : "Archive Selection TBC"}</span>
       </div>
     </div>
   );
