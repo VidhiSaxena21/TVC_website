@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Camera } from "lucide-react";
 
-const slides = Array.from({ length: 10 }, (_, index) => ({
-  src: `/images/about/tvc-${String(index + 1).padStart(2, "0")}.jpg`,
+const slides = Array.from({ length: 7 }, (_, index) => ({
+  src: `/images/about/tvc-${String(index + 1).padStart(2, "0")}.${index === 0 ? "png" : index === 4 ? "jpg" : "jpeg"}`,
   number: String(index + 1).padStart(2, "0"),
 }));
 
@@ -88,7 +88,7 @@ export function AboutPhotoCarousel() {
             <p className="mt-1 text-sm text-white/80">Thapar Venture Club · TIET Patiala</p>
           </div>
           <p className="font-mono text-xs tabular-nums text-white/80" aria-live="polite">
-            {activeSlide.number}<span className="text-white/35"> / 10</span>
+            {activeSlide.number}<span className="text-white/35"> / 07</span>
           </p>
         </div>
       </div>
