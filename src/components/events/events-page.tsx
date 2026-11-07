@@ -8,11 +8,11 @@ import { SiteFooter } from "@/components/shared/site-footer";
 const events = [
   {
     id: "tvc-x-sat",
-    title: "TVC × SAT",
-    subtitle: "The Matrix Challenge",
-    type: "High-stakes case competition",
+    title: "PRIMUS’26",
+    subtitle: "Break the code. Own the outcome.",
+    type: "TVC × SAT · The Matrix Challenge",
     description:
-      "Step into the Matrix. Decode complex business problems, challenge assumptions and turn sharp thinking into decisive action.",
+      "Three arenas. Product, consulting and finance. Step into the Matrix and turn sharp thinking into decisive action.",
     href: "/events/tvc-x-sat",
     theme: "matrix",
     number: "01",
