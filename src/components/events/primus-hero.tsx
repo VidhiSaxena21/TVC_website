@@ -36,14 +36,14 @@ export function PrimusHero() {
     };
   }, []);
 
-  // Hold on pure black first, then bring in the code before revealing the title.
-  const codeReveal = range(progress, 0.035, 0.30);
-  const titleReveal = range(progress, 0.22, 0.62);
-  const detailsReveal = range(progress, 0.60, 0.82);
-  const exitReveal = range(progress, 0.88, 1);
+  // Give the opening and title reveal substantially more scroll room.
+  const codeReveal = range(progress, 0.015, 0.20);
+  const titleReveal = range(progress, 0.12, 0.40);
+  const detailsReveal = range(progress, 0.39, 0.53);
+  const exitReveal = range(progress, 0.91, 1);
 
   return (
-    <section ref={sectionRef} aria-label="PRIMUS 2026 introduction" className="relative h-[230vh] bg-black">
+    <section ref={sectionRef} aria-label="PRIMUS 2026 introduction" className="relative h-[360vh] bg-black">
       <div className="sticky top-0 flex h-[100svh] min-h-[600px] items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 transition-opacity duration-300" style={{ opacity: codeReveal * 0.98 }}>
           <MatrixRain />
@@ -111,7 +111,7 @@ export function PrimusHero() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 font-mono text-[9px] uppercase tracking-[0.22em] text-white/45" style={{ opacity: 1 - detailsReveal * 0.75 }}>
-          <span>{progress < 0.22 ? "Scroll to enter" : "The system is yours"}</span>
+          <span>{progress < 0.12 ? "Scroll to enter" : "The system is yours"}</span>
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </div>
 
