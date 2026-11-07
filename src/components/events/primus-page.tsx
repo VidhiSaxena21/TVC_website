@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Binary, BriefcaseBusiness, ChartNoAxesCombined, Cpu, Layers3, Terminal } from "lucide-react";
+import { ArrowUpRight, Binary, BriefcaseBusiness, ChartNoAxesCombined, Cpu, Layers3 } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
-import { MatrixRain } from "@/components/events/matrix-rain";
+import { PrimusHero } from "@/components/events/primus-hero";
 
 const tracks = [
   {
@@ -42,50 +41,7 @@ export function PrimusPage() {
     <div className="flex min-h-screen flex-col overflow-hidden bg-[#020503] text-[#efffed] selection:bg-[#a3ff12] selection:text-black">
       <SiteHeader />
       <main id="main-content" className="flex-grow">
-        <section className="relative isolate flex min-h-[min(900px,100svh)] items-center overflow-hidden border-b border-[#a3ff12]/15 bg-[#020503] pt-28">
-          <MatrixRain />
-          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(36,255,92,0.16),transparent_52%),linear-gradient(90deg,rgba(0,0,0,0.75),rgba(0,0,0,0.12)_55%,rgba(0,0,0,0.7))]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-[#020503]" />
-          <div aria-hidden="true" className="absolute left-0 top-0 h-full w-px bg-[#a3ff12]/20" />
-          <div className="relative mx-auto w-full max-w-[1500px] px-6 pb-24 pt-16 sm:px-10 lg:px-16 lg:pb-28">
-            <Link href="/events" className="mb-16 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-white/50 transition-colors hover:text-[#a3ff12]">
-              <ArrowRight className="h-3 w-3 rotate-180" /> All events
-            </Link>
-            <div className="mb-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.24em] text-[#a3ff12]/80">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#a3ff12] shadow-[0_0_14px_#a3ff12]" />
-              TVC × SAT · SYSTEM ONLINE
-            </div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.42em] text-white/55 sm:text-sm">The Matrix Challenge</p>
-            <h1 className="relative max-w-6xl text-[clamp(4.5rem,15vw,13rem)] font-black leading-[0.76] tracking-[-0.095em] text-[#eaffdf]">
-              PRIMUS<span className="text-[#a3ff12]">’26</span>
-            </h1>
-            <div className="mt-9 flex flex-col gap-7 sm:mt-12 sm:flex-row sm:items-end sm:justify-between">
-              <div className="max-w-xl">
-                <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#a3ff12] sm:text-base">Where every decision connects.</p>
-                <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/60 sm:text-base">
-                  Three arenas. Different ways to think. One challenge: see what others miss, make the call and turn your thinking into impact.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a href="#tracks" className="group inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
-                    Explore the tracks <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </a>
-                  <a href="https://www.saturnalia.in/events/business" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-white/20 bg-black/20 px-6 py-4 font-mono text-[10px] uppercase tracking-[0.18em] text-white/75 transition-colors hover:border-[#a3ff12]/60 hover:text-[#a3ff12]">
-                    Register now <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="hidden min-w-48 border-l border-[#a3ff12]/30 pl-5 font-mono text-[9px] uppercase leading-6 tracking-[0.16em] text-white/35 md:block">
-                <p>Reality is a system.</p>
-                <p>Systems can be decoded.</p>
-                <p className="text-[#a3ff12]/75">Your move starts here_</p>
-              </div>
-            </div>
-          </div>
-          <a href="#signal" aria-label="Scroll to discover Primus" className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35 transition-colors hover:text-[#a3ff12]">
-            Scroll to decode <ArrowDown className="h-4 w-4 animate-bounce" />
-          </a>
-          <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#a3ff12]/70 to-transparent" />
-        </section>
+        <PrimusHero />
 
         <section id="signal" className="relative border-b border-[#a3ff12]/10 bg-[#050a06]">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-16 lg:py-28">
