@@ -1,4 +1,4 @@
-import { ArrowUpRight, Binary, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Cpu, Layers3, Trophy, Users } from "lucide-react";
+import { ArrowUpRight, Binary, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Cpu, Layers3, MapPin, Users } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { PrimusHero } from "@/components/events/primus-hero";
@@ -6,33 +6,33 @@ import { PrimusHero } from "@/components/events/primus-hero";
 const tracks = [
   {
     number: "01",
-    code: "BUILD",
+    code: "BUILD. INNOVATE. PITCH.",
     title: "Product",
-    descriptor: "Think like a builder.",
-    description: "Create a startup, develop an innovative product and pitch your business idea to attract consultants and investors.",
+    descriptor: "Turn an idea into a business proposition.",
+    description: "Step into the shoes of entrepreneurs and product innovators. Conceptualise a startup, develop an innovative product or solution, understand user needs and pitch its potential.",
     icon: Layers3,
     accent: "from-[#b7ff6a]/20",
-    tags: ["Product thinking", "Innovation", "User experience"],
+    tags: ["Entrepreneurship", "Product innovation", "Pitching"],
   },
   {
     number: "02",
-    code: "SOLVE",
-    title: "Consulting & Business",
-    descriptor: "Think in systems.",
-    description: "Analyse startups, buy and sell virtual company shares, and maximise your portfolio value through strategic investment decisions.",
+    code: "ANALYSE. INVEST. STRATEGISE.",
+    title: "Consulting",
+    descriptor: "Make informed strategic decisions.",
+    description: "Analyse startups, evaluate opportunities, and buy or sell virtual company shares to maximise portfolio value. Interpret business information, assess potential, manage risks and make informed investment decisions.",
     icon: BriefcaseBusiness,
     accent: "from-[#55f7a5]/20",
-    tags: ["Startup analysis", "Virtual shares", "Portfolio strategy"],
+    tags: ["Startup analysis", "Virtual shares", "Risk assessment"],
   },
   {
     number: "03",
-    code: "ANALYSE",
+    code: "ADVISE. NEGOTIATE. GROW.",
     title: "Finance",
-    descriptor: "Think in numbers.",
-    description: "Pitch your expertise to startups, secure consulting deals, and help founders improve their products and business strategies.",
+    descriptor: "Help startups move forward.",
+    description: "Pitch your expertise to startups, secure consulting deals, and help improve products and business strategies. Understand business challenges, communicate value, negotiate effectively and develop practical recommendations.",
     icon: ChartNoAxesCombined,
     accent: "from-[#a4ffcf]/20",
-    tags: ["Consulting", "Startup growth", "Strategy"],
+    tags: ["Consulting deals", "Negotiation", "Business growth"],
   },
 ];
 
@@ -46,17 +46,17 @@ export function PrimusPage() {
         <section id="signal" className="relative border-b border-[#a3ff12]/10 bg-[#050a06]">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-16 lg:py-28">
             <div>
-              <p className="mb-5 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><Binary className="h-4 w-4" /> 01 / The premise</p>
-              <h2 className="max-w-lg text-4xl font-semibold leading-[0.98] tracking-[-0.06em] sm:text-5xl">The world is complex.<br /><span className="text-white/35">Your thinking shouldn't be ordinary.</span></h2>
+              <p className="mb-5 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><Binary className="h-4 w-4" /> 01 / About the event</p>
+              <h2 className="max-w-lg text-4xl font-semibold leading-[0.98] tracking-[-0.06em] sm:text-5xl">Beyond theory.<br /><span className="text-white/35">Into the business world.</span></h2>
             </div>
             <div className="flex flex-col justify-between gap-8">
               <p className="max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-                PRIMUS’26 is a challenge-led experience by Thapar Venture Club in collaboration with SAT. Step into a world built around strategy, creativity and sharp decision-making. Decode the problem, challenge your assumptions and make your move.
+                PRIMUS is an overnight, inter-college business and case competition organised by Thapar Venture Club (TVC) in collaboration with Saturnalia’26. It brings together aspiring entrepreneurs, strategists, innovators and finance enthusiasts to tackle challenges inspired by the real business world.
               </p>
               <div className="grid grid-cols-2 gap-5 border-t border-white/10 pt-6 sm:grid-cols-3">
-                <div><p className="font-mono text-2xl text-[#a3ff12]">03</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Distinct tracks</p></div>
-                <div><p className="font-mono text-2xl text-[#a3ff12]">01</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Shared arena</p></div>
-                <div className="col-span-2 sm:col-span-1"><p className="font-mono text-2xl text-[#a3ff12]">∞</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Ways to think</p></div>
+                <div><p className="font-mono text-2xl text-[#a3ff12]">600–700</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Expected participants</p></div>
+                <div><p className="font-mono text-2xl text-[#a3ff12]">150</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Expected teams</p></div>
+                <div className="col-span-2 sm:col-span-1"><p className="font-mono text-2xl text-[#a3ff12]">03</p><p className="mt-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/40">Specialised tracks</p></div>
               </div>
             </div>
           </div>
@@ -66,23 +66,23 @@ export function PrimusPage() {
           <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><CalendarDays className="h-4 w-4" /> 02 / Event details</p>
-                <h2 id="primus-details-title" className="text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">One night.<br /><span className="text-white/35">A different way to play business.</span></h2>
+                <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><CalendarDays className="h-4 w-4" /> 02 / The PRIMUS experience</p>
+                <h2 id="primus-details-title" className="text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">One overnight challenge.<br /><span className="text-white/35">Every decision connects.</span></h2>
               </div>
-              <div className="flex items-center gap-4 border-l border-[#a3ff12]/30 pl-5">
-                <Trophy className="h-8 w-8 shrink-0 text-[#a3ff12]" />
-                <div><p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Prize pool</p><p className="mt-1 text-2xl font-semibold text-white">₹1,00,000<span className="text-[#a3ff12]">+</span></p></div>
+              <div className="flex items-center gap-3 border-l border-[#a3ff12]/30 pl-5">
+                <MapPin className="h-7 w-7 shrink-0 text-[#a3ff12]" />
+                <div><p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">Venue</p><p className="mt-1 text-lg font-semibold text-white">CSED, TIET Patiala</p></div>
               </div>
             </div>
             <div className="mt-12 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Starts</p><p className="mt-3 text-xl font-semibold text-white">20 November</p><p className="mt-1 font-mono text-xs text-[#a3ff12]">10:00 PM · 2026</p></div>
-              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Concludes</p><p className="mt-3 text-xl font-semibold text-white">21 November</p><p className="mt-1 font-mono text-xs text-[#a3ff12]">8:00 AM · 2026</p></div>
-              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Registration</p><p className="mt-3 text-xl font-semibold text-white">₹300</p><p className="mt-1 text-xs text-white/45">Per participant</p></div>
-              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Expected reach</p><p className="mt-3 text-xl font-semibold text-white">1,000+</p><p className="mt-1 text-xs text-white/45">Student footfall</p></div>
+              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Date</p><p className="mt-3 text-xl font-semibold text-white">20 November 2026</p><p className="mt-1 font-mono text-xs text-[#a3ff12]">Friday</p></div>
+              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Duration</p><p className="mt-3 text-xl font-semibold text-white">10:00 PM – 8:00 AM</p><p className="mt-1 font-mono text-xs text-[#a3ff12]">Overnight</p></div>
+              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Expected teams</p><p className="mt-3 text-xl font-semibold text-white">150</p><p className="mt-1 text-xs text-white/45">Across three tracks</p></div>
+              <div className="bg-[#030704] p-5 sm:p-6"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/40">Rounds per track</p><p className="mt-3 text-xl font-semibold text-white">3–4</p><p className="mt-1 text-xs text-white/45">Interconnected rounds</p></div>
             </div>
             <div className="mt-5 flex items-start gap-3 text-xs leading-relaxed text-white/45">
               <Users className="mt-0.5 h-4 w-4 shrink-0 text-[#a3ff12]/70" />
-              <p>Accommodation options are available: ₹500 without food or ₹800 with food. Total participation costs are ₹800 and ₹1,100 respectively, including the ₹300 registration fee.</p>
+              <p>With around 50 teams expected in each track, participants will progress through challenges where every stage builds on the decisions made before it.</p>
             </div>
           </div>
         </section>
@@ -92,10 +92,10 @@ export function PrimusPage() {
           <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
             <div className="mb-12 flex flex-col gap-6 border-b border-white/10 pb-8 sm:mb-16 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><Cpu className="h-4 w-4" /> 03 / Choose your reality</p>
-                <h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Three tracks.<br /><span className="text-white/35">Three ways to win.</span></h2>
+                <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[#a3ff12]"><Cpu className="h-4 w-4" /> 03 / The three tracks</p>
+                <h2 className="text-4xl font-semibold tracking-[-0.06em] sm:text-6xl">Three tracks.<br /><span className="text-white/35">Three perspectives.</span></h2>
               </div>
-              <p className="max-w-xs text-sm leading-relaxed text-white/45">Pick the arena that matches how you think. Then prove what you can do with it.</p>
+              <p className="max-w-xs text-sm leading-relaxed text-white/45">Each track offers a distinct perspective on the business ecosystem, with 3–4 interconnected rounds.</p>
             </div>
 
             <div className="grid gap-4 lg:grid-cols-3">
@@ -112,7 +112,7 @@ export function PrimusPage() {
                       <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.24em] text-[#a3ff12]/65">{track.code}</p>
                       <h3 className="text-3xl font-semibold leading-tight tracking-[-0.045em] text-white sm:text-4xl">{track.title}</h3>
                       <p className="mt-3 text-sm text-white/65">{track.descriptor}</p>
-                      <p className="mt-5 min-h-[100px] text-sm leading-relaxed text-white/45">{track.description}</p>
+                      <p className="mt-5 min-h-[140px] text-sm leading-relaxed text-white/45">{track.description}</p>
                       <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">
                         {track.tags.map((tag) => <span key={tag} className="border border-white/10 px-2.5 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">{tag}</span>)}
                       </div>
@@ -126,16 +126,17 @@ export function PrimusPage() {
         </section>
 
         <section className="border-y border-[#a3ff12]/15 bg-[#071009]">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-16 lg:py-20">
-            <div>
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.24em] text-[#a3ff12]">04 / Your move</p>
-              <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.055em] sm:text-5xl">The system is waiting.<br /><span className="text-white/35">Are you ready to challenge it?</span></h2>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/50">Bring your perspective. Find your team. Step into PRIMUS’26.</p>
-            </div>
-            <div id="registration" className="scroll-mt-32">
-              <a href="https://www.saturnalia.in/events/business" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
-                Register for PRIMUS’26 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </a>
+          <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.24em] text-[#a3ff12]">04 / More than a competition</p>
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+              <h2 className="max-w-2xl text-3xl font-semibold tracking-[-0.055em] sm:text-5xl">Every move matters.<br /><span className="text-white/35">Every decision connects.</span></h2>
+              <div>
+                <p className="text-base leading-relaxed text-white/60">PRIMUS is an opportunity to experience the different dimensions of the business world — from creating products and shaping strategies to evaluating investments and helping startups grow. It brings together people curious about entrepreneurship, business, innovation and decision-making, giving them a platform to challenge themselves, learn through experience and engage with like-minded minds.</p>
+                <p className="mt-6 border-l border-[#a3ff12]/60 pl-5 text-lg leading-relaxed text-white">PRIMUS — Where Every Decision Connects.</p>
+                <a href="https://www.saturnalia.in/events/business" target="_blank" rel="noopener noreferrer" className="group mt-8 inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
+                  Explore PRIMUS’26 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
