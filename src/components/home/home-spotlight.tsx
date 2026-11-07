@@ -37,35 +37,7 @@ const events = [
 export function HomeSpotlight() {
   return (
     <section className="relative overflow-hidden border-y border-white/[0.08] bg-[#050505] text-[#f4f3ef]">
-      <div aria-hidden="true" className="overflow-hidden border-b border-white/[0.08] py-3">
-        <div className="flex w-max animate-[tvc-marquee_32s_linear_infinite] motion-reduce:animate-none">
-          {Array.from({ length: 2 }).map((_, index) => (
-            <p key={index} className="flex shrink-0 items-center gap-8 pr-8 font-mono text-[9px] uppercase tracking-[0.24em] text-white/40 sm:text-[10px]">
-              <span>IDEATE</span><span className="text-[#f5ed00]">✳</span><span>ASCEND</span><span className="text-[#f5ed00]">✳</span><span>LEAD</span><span className="text-[#f5ed00]">✳</span><span>BUILD</span><span className="text-[#f5ed00]">✳</span><span>CONNECT</span><span className="text-[#f5ed00]">✳</span><span>IDEATE</span>
-            </p>
-          ))}
-        </div>
-      </div>
-
       <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-28 lg:px-12">
-        <div className="mb-14 grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-          <div>
-            <p className="mb-5 flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.25em] text-[#f5ed00]"><span className="h-px w-7 bg-[#f5ed00]" /> TVC / In motion</p>
-            <h2 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.07em] sm:text-6xl lg:text-7xl">Ideas don’t stay<br /><span className="text-white/35">ideas for long.</span></h2>
-          </div>
-          <p className="max-w-md text-sm leading-relaxed text-white/50 lg:justify-self-end sm:text-base">We create spaces for students to explore entrepreneurship, challenge assumptions and turn ambition into action.</p>
-        </div>
-
-        <div className="grid grid-cols-1 border-y border-white/10 sm:grid-cols-3">
-          {highlights.map((item, index) => (
-            <div key={item.label} className={`group py-6 sm:px-6 sm:py-8 ${index ? "border-t border-white/10 sm:border-l sm:border-t-0" : ""}`}>
-              <p className="font-mono text-4xl font-medium tracking-[-0.06em] text-[#f5ed00] transition-transform duration-300 group-hover:translate-x-1 sm:text-5xl">{item.value}</p>
-              <p className="mt-3 text-sm font-medium text-white">{item.label}</p>
-              <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.12em] text-white/35">{item.note}</p>
-            </div>
-          ))}
-        </div>
-
         <div className="mb-8 mt-20 flex flex-col gap-3 border-b border-white/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35">The TVC calendar</p>
