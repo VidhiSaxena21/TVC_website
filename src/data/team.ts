@@ -110,7 +110,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         id: "liya",
         name: "Liya",
         position: "Head of Operations",
-        image: "",
+        image: "/images/eb/liya.jpg",
         linkedin: "https://www.linkedin.com/in/liyamittal/",
       },
 
@@ -170,7 +170,7 @@ export const executiveBoardGroups: TeamGroup[] = [
         id: "vishesh-nagpure",
         name: "Vishesh Nagpure",
         position: "Co-Convener",
-        image: "",
+        image: "/images/eb/vishesh.jpeg",
         linkedin: "https://www.linkedin.com/in/vishesh-nagpure-10a9b22b7/",
       },
     ],
