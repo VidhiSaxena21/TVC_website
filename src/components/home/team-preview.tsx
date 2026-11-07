@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, User } from "lucide-react";
 import { executiveBoardGroups } from "@/data/team";
 
@@ -53,17 +54,25 @@ export function TeamPreview() {
               <div className="absolute top-2 right-2 text-[10px] font-mono text-white/20 z-10">+</div>
 
               {/* Portrait Aspect Frame */}
-              <div className="relative aspect-[3/4] w-full bg-gradient-to-b from-[#1b1b19] to-[#0f0f0e] border-b border-white/[0.06] flex flex-col items-center justify-center p-6 text-center overflow-hidden">
-                {/* Subtle silhouette backdrop */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-white/10 flex items-center justify-center text-white/20 group-hover:text-[#f5ed00]/60 group-hover:border-[#f5ed00]/20 transition-all duration-300">
-                  <User className="w-10 h-10 sm:w-12 sm:h-12" />
-                </div>
-
-                <div className="mt-5">
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-[#a5a49f] bg-black/50 border border-white/[0.08] px-3 py-1.5 rounded-xs">
-                    Slot 0{idx + 1} {"//"} Term 2026–2027
-                  </span>
-                </div>
+              <div className="relative aspect-[3/4] w-full bg-gradient-to-b from-[#1b1b19] to-[#0f0f0e] border-b border-white/[0.06] overflow-hidden">
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-top grayscale contrast-105 transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center p-6 text-center">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-white/10 flex items-center justify-center text-white/20">
+                      <User className="w-10 h-10 sm:w-12 sm:h-12" />
+                    </div>
+                    <span className="mt-5 font-mono text-[11px] uppercase tracking-widest text-[#a5a49f] bg-black/50 border border-white/[0.08] px-3 py-1.5 rounded-xs">
+                      Portrait coming soon
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Member Meta */}
@@ -84,7 +93,7 @@ export function TeamPreview() {
 
                 <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-white/40">
                   <span>TIET PATIALA</span>
-                  <span>PORTRAIT TBC</span>
+                  <span>{member.image ? "EXECUTIVE BOARD" : "PORTRAIT TBC"}</span>
                 </div>
               </div>
             </div>
