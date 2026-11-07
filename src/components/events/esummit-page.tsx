@@ -6,10 +6,14 @@ import { SiteFooter } from "@/components/shared/site-footer";
 import { PlayVideoOnView } from "@/components/events/play-video-on-view";
 import { ESummitTeamGallery } from "@/components/events/esummit-team-gallery";
 
-const moments = [
-  { number: "01", title: "Ideas take the stage", image: "/images/esummit/highlights/highlight-01.jpg", shape: "aspect-[5/4]" },
-  { number: "02", title: "Conversations that move ideas forward", image: "/images/esummit/highlights/highlight-02.jpg", shape: "aspect-[5/4]" },
-  { number: "03", title: "A community of builders", image: "/images/esummit/highlights/highlight-03.jpg", shape: "aspect-[5/4]" },
+const summitEvents = [
+  { name: "Unizunicorn", date: "February 6", time: "6:00 PM", venue: "LT202", description: "Bid. Build. Pivot. Pitch. A fast-paced entrepreneurial battlefield where campus locations turn into powerful startup ideas.", image: "/images/esummit/events/unizunicorn.jpg" },
+  { name: "Boardroom", date: "February 13", time: "9:00 PM", venue: "Activity Space", description: "Innovate, market, survive crises, and scale your startup in this high-stakes business simulation.", image: "/images/esummit/events/boardroom.jpg" },
+  { name: "Opening Ceremony", date: "February 18", time: "6:00 PM", venue: "Main Auditorium", description: "An inspiring inauguration marking the beginning of E-Summit with a distinguished keynote address.", image: "/images/esummit/events/opening-ceremony.jpg" },
+  { name: "Internship Fair", date: "February 19", time: "3:00 PM", venue: "K Lawns", description: "Connecting students with recruiters and startups to unlock internships and real-world opportunities.", image: "/images/esummit/events/internship-fair.jpg" },
+  { name: "Startup showcase", date: "February 20", time: "10:00 AM", venue: "Workshop Room B", description: "A vibrant platform connecting startups and students to explore innovation, emerging trends, and hands-on entrepreneurship.", image: "/images/esummit/events/startup-showcase.jpg" },
+  { name: "Biz Conclave", date: "February 21", time: "5:00 PM", venue: "Main Auditorium", description: "A formal conclave bringing together industry leaders to share insights across business, entrepreneurship, finance, and technology.", image: "/images/esummit/events/biz-conclave.jpg" },
+  { name: "Unwind", date: "February 22", time: "5:30 PM", venue: "OAT", description: "An unforgettable evening where ideas, creativity, and connections come alive.", image: "/images/esummit/events/unwind.jpg" },
 ];
 
 export function ESummitPage() {
@@ -91,33 +95,34 @@ export function ESummitPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-28 lg:px-12">
-          <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <section id="event-lineup" className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-28 lg:px-12">
+          <div className="mb-12 flex flex-col gap-5 border-b border-white/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">02 / Moments from the summit</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">Ideas in action.</h2>
+              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#f5ed00]">02 / The programme</p>
+              <h2 className="text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">Seven moments.<br /><span className="text-white/35">One summit.</span></h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-white/45">A visual look back at the people, energy and moments of E-Summit'26.</p>
+            <p className="max-w-sm text-sm leading-relaxed text-white/45">From startup simulations and showcases to conversations, opportunities and the closing celebration.</p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {moments.map((moment) => (
-              <figure key={moment.number} className="group">
-                <div className={`relative ${moment.shape} overflow-hidden border border-white/10 bg-[#12120f]`}>
-                  <img
-                    src={moment.image}
-                    alt={moment.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    onError={(event) => { event.currentTarget.style.display = "none"; }}
-                  />
-                  <div className="absolute inset-0 -z-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.08),transparent_65%)]">
-                    <span className="font-mono text-4xl text-white/15">{moment.number}</span>
-                    <span className="mt-2 font-mono text-[8px] uppercase tracking-[0.18em] text-white/30">Upload event photograph</span>
+          <div className="divide-y divide-white/10 border-y border-white/10">
+            {summitEvents.map((event, index) => (
+              <article key={event.name} className="grid gap-7 py-8 sm:grid-cols-[90px_1fr_0.8fr] sm:items-center sm:gap-10 sm:py-10">
+                <p className="font-mono text-sm text-[#f5ed00]">0{index + 1}<span className="text-white/25"> / 07</span></p>
+                <div>
+                  <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.2em] text-[#8dbbff]">E-Summit event</p>
+                  <h3 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{event.name}</h3>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55">{event.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/45">
+                    <span>{event.date} · {event.time}</span><span>{event.venue}</span>
                   </div>
-                  <span className="absolute bottom-4 left-4 font-mono text-[9px] uppercase tracking-[0.16em] text-white/75">{moment.number} / E-Summit'26</span>
                 </div>
-                <figcaption className="mt-3 text-sm text-white/60">{moment.title}</figcaption>
-              </figure>
+                <div className="relative aspect-[5/3] overflow-hidden border border-white/10 bg-[#11111a] sm:aspect-[4/3]">
+                  <img src={event.image} alt={`${event.name} at E-Summit 2026`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" onError={(event) => { event.currentTarget.style.display = "none"; }} />
+                  <div className="absolute inset-0 -z-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(100,130,255,0.12),transparent_65%)]">
+                    <span className="font-mono text-3xl text-white/20">0{index + 1}</span>
+                    <span className="mt-2 font-mono text-[8px] uppercase tracking-[0.16em] text-white/30">Event photograph</span>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </section>
