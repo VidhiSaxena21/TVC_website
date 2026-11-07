@@ -245,21 +245,6 @@ export function AboutSection() {
             })}
           </div>
 
-          {/* Photography Placement 2 & 3: Dual Documentary Frames */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <EditorialPhotoFrame
-              label="PHOTO 02 // IDEATION & DESIGN SPRINTS"
-              location="CAMPUS WORKSHOP LAB"
-              caption="Reserved for candid TVC ideation sessions: Whiteboards, prototype testing, and interdisciplinary student collaboration."
-              aspectRatio="aspect-[16/10]"
-            />
-            <EditorialPhotoFrame
-              label="PHOTO 03 // FOUNDER NETWORKING"
-              location="SEMINAR HALL"
-              caption="Reserved for TVC founder roundtables: One-on-one mentor interactions, investor pitches, and alumni exchanges."
-              aspectRatio="aspect-[16/10]"
-            />
-          </div>
         </div>
 
         {/* ========================================================================= */}
