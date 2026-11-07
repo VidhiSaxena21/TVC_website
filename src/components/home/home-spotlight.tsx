@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Binary, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Layers3, Sparkles } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, CalendarDays, ChartNoAxesCombined, Layers3, Sparkles } from "lucide-react";
 
 const highlights = [
   { value: "12TH", label: "E-Summit edition", note: "A flagship entrepreneurship summit" },
@@ -105,12 +105,6 @@ export function HomeSpotlight() {
           })}
         </div>
       </div>
-      <style jsx>{`
-        @keyframes tvc-marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   );
 }
