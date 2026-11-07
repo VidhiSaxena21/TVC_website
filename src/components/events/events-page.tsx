@@ -17,6 +17,7 @@ const events = [
     theme: "matrix",
     number: "01",
     status: "Registration open",
+    date: "20 Nov, 10 PM — 21 Nov, 8 AM",
   },
   {
     id: "e-summit",
@@ -82,6 +83,7 @@ export function EventsPage() {
               <div className="relative">
                 <p className={`mb-4 font-mono text-[10px] uppercase tracking-[0.25em] ${event.theme === "matrix" ? "text-[#a3ff12]/70" : "text-white/40"}`}>{event.subtitle}</p>
                 <h2 className={`text-5xl font-semibold tracking-[-0.06em] transition-transform duration-500 group-hover:-translate-y-1 sm:text-6xl ${event.theme === "matrix" ? "text-[#e9ffe0]" : "text-[#f4f3ef]"}`}>{event.title}</h2>
+                {"date" in event && event.date && <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-[#a3ff12]">{event.date}</p>}
                 <div className="mt-5 grid grid-rows-[1fr] transition-all duration-500 lg:mt-0 lg:grid-rows-[0fr] lg:group-hover:mt-5 lg:group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
                     <p className="max-w-md text-sm leading-relaxed text-white/65">{event.description}</p>
