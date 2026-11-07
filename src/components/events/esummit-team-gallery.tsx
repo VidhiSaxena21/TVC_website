@@ -19,7 +19,7 @@ export function ESummitTeamGallery() {
             <span className="mt-2 font-mono text-[8px] uppercase tracking-[0.18em] text-white/25">Team photograph</span>
           </div>
           <img
-            src={`/images/esummit/team/team-${number}.jpg`}
+            src={`/images/esummit/team/team-${number}.${number === "01" || number === "09" ? "png" : "jpg"}`}
             alt={`E-Summit 2026 team photograph ${number}`}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
