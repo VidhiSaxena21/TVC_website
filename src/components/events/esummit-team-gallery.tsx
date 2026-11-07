@@ -12,7 +12,7 @@ export function ESummitTeamGallery() {
       {photos.map(({ number, wide, featured }) => (
         <div
           key={number}
-          className={`group relative overflow-hidden border border-white/10 bg-[#10100f] ${featured ? "col-span-2 aspect-[16/9] sm:col-span-4 sm:aspect-[2.4/1]" : wide ? "col-span-2 aspect-[2/1]" : "aspect-[4/5]"}`}
+          className={`group relative overflow-hidden border border-white/10 bg-[#10100f] ${featured ? "col-span-2 aspect-[8/5] sm:col-span-2 sm:aspect-[8/5]" : wide ? "col-span-2 aspect-[2/1]" : "aspect-[4/5]"}`}
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_45%,rgba(245,237,0,0.07),transparent_65%)]">
             <span className="font-mono text-3xl text-white/15">{number}</span>
