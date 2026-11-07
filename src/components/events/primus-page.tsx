@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Binary, BriefcaseBusiness, ChartNoAxesCombined, Code2, Cpu, Layers3, Terminal } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Binary, BriefcaseBusiness, ChartNoAxesCombined, Cpu, Layers3, Terminal } from "lucide-react";
 import { SiteHeader } from "@/components/shared/site-header";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { MatrixRain } from "@/components/events/matrix-rain";
