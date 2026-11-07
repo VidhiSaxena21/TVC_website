@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays } from "lucide-react";
 import { MatrixRain } from "@/components/events/matrix-rain";
 
 export function PrimusHero() {
@@ -48,6 +48,13 @@ export function PrimusHero() {
         >
           Where every decision connects.
         </p>
+
+        <div className="mt-7 inline-flex items-center gap-3 border-y border-[#a3ff12]/20 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#d1ffcb] transition-all delay-600 duration-700 sm:text-xs" style={{ opacity: revealed ? 1 : 0, transform: `translateY(${revealed ? 0 : 12}px)` }}>
+          <CalendarDays className="h-4 w-4 text-[#a3ff12]" />
+          <span>20 November · 10 PM</span>
+          <span className="text-[#a3ff12]/50">—</span>
+          <span>21 November · 8 AM</span>
+        </div>
 
         <div
           className="mt-9 flex flex-wrap justify-center gap-3 transition-all delay-700 duration-700"
