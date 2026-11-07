@@ -61,7 +61,7 @@ export function PrimusPage() {
             </h1>
             <div className="mt-9 flex flex-col gap-7 sm:mt-12 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-xl">
-                <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#a3ff12] sm:text-base">Break the code. Own the outcome.</p>
+                <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#a3ff12] sm:text-base">Where every decision connects.</p>
                 <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/60 sm:text-base">
                   Three arenas. Different ways to think. One challenge: see what others miss, make the call and turn your thinking into impact.
                 </p>
@@ -69,8 +69,8 @@ export function PrimusPage() {
                   <a href="#tracks" className="group inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
                     Explore the tracks <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </a>
-                  <a href="#registration" className="inline-flex items-center gap-3 border border-white/20 bg-black/20 px-6 py-4 font-mono text-[10px] uppercase tracking-[0.18em] text-white/75 transition-colors hover:border-[#a3ff12]/60 hover:text-[#a3ff12]">
-                    Enter the arena <Terminal className="h-4 w-4" />
+                  <a href="https://www.saturnalia.in/events/business" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-white/20 bg-black/20 px-6 py-4 font-mono text-[10px] uppercase tracking-[0.18em] text-white/75 transition-colors hover:border-[#a3ff12]/60 hover:text-[#a3ff12]">
+                    Register now <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -152,7 +152,9 @@ export function PrimusPage() {
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/50">Bring your perspective. Find your team. Step into PRIMUS’26.</p>
             </div>
             <div id="registration" className="scroll-mt-32">
-              <span className="inline-flex items-center gap-3 border border-[#a3ff12]/35 px-6 py-4 font-mono text-[10px] uppercase tracking-[0.16em] text-[#a3ff12]/80"><Terminal className="h-4 w-4" /> Registration details coming soon</span>
+              <a href="https://www.saturnalia.in/events/business" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-[#a3ff12] px-6 py-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-black transition-all hover:-translate-y-1 hover:bg-[#c2ff70]">
+                Register for PRIMUS’26 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </a>
             </div>
           </div>
         </section>
